@@ -1,0 +1,17 @@
+{
+  "name": "swapper-tenderly-standalone",
+  "verified": true,
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+  "units": {
+    "swapper-tenderly": {
+      "name": "swapper-tenderly",
+      "contract": "Swapper",
+      "address": "0x483Da1A84EC769b63Cb9183cFF2e9153239e14BF",
+      "chainId": 250,
+      "tx": "0x1fb475a4a84d0c819e6f34c3f42d5835d3b407d2f1ffb3cc20a66aa2ec43c424",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true
+    }
+  }
+}

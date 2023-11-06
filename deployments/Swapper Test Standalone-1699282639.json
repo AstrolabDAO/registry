@@ -1,0 +1,17 @@
+{
+  "name": "Swapper Test Standalone",
+  "units": {
+    "Swapper Test": {
+      "name": "Swapper Test",
+      "contract": "Swapper",
+      "deployer": "<SignerWithAddress 0x026E222AC6aD0BA8AD04efd7BCf6025e40457345>",
+      "chainId": 250,
+      "address": "0xFDE08Ba7027bf2FEb7A42B647E88c9Fa6788120e",
+      "tx": "0x4525bbc46c9bab422418d9ac2061b4276ada924043dab0ba875ff47938ae6ba8",
+      "exported": true,
+      "verified": true
+    }
+  },
+  "verified": true,
+  "deployer": "<SignerWithAddress 0x026E222AC6aD0BA8AD04efd7BCf6025e40457345>"
+}
