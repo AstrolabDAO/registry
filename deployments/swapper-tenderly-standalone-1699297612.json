@@ -6,9 +6,9 @@
     "swapper-tenderly": {
       "name": "swapper-tenderly",
       "contract": "Swapper",
-      "address": "0x07ED9E3ecb5caCF4519E77af7eCd85Ac346D02bB",
+      "address": "0x306c8E263A6bF8ee310a9805fa6C75D3FAb783B9",
       "chainId": 250,
-      "tx": "0xb7ed7c10cd449e77a2b87d85ff4d8bec21920cfb1080e9566091910877286f91",
+      "tx": "0xad962072fa9c7d5775b5adb3f5ed4932d09331b22aa3a9fd1b8a53e99c7004b3",
       "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
       "exported": true,
       "verified": true

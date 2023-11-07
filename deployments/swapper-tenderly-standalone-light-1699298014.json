@@ -1,0 +1,11 @@
+{
+  "name": "swapper-tenderly-standalone",
+  "units": {
+    "swapper-tenderly": {
+      "name": "swapper-tenderly",
+      "contract": "Swapper",
+      "address": "0xd3E3bb529f324c1EA8c74a79716C08b80154ba44",
+      "chainId": 250
+    }
+  }
+}
