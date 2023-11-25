@@ -1318,26 +1318,6 @@
           "internalType": "address[]",
           "name": "_rewardTokens",
           "type": "address[]"
-        },
-        {
-          "internalType": "address",
-          "name": "_lpToken",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_rewardPool",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_stableRouter",
-          "type": "address"
-        },
-        {
-          "internalType": "uint8",
-          "name": "_tokenIndex",
-          "type": "uint8"
         }
       ],
       "name": "init",
@@ -1725,19 +1705,6 @@
       "name": "revokeRole",
       "outputs": [],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "rewardPool",
-      "outputs": [
-        {
-          "internalType": "contract IStakingRewards",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {
