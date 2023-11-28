@@ -1,6 +1,6 @@
 {
   "name": "@astrolabs/registry",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": "https://github.com/AstrolabFinance/registry",
@@ -24,5 +24,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@astrolabs/registry": "^1.0.8"
+  }
 }
