@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@astrolabs/registry@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@astrolabs/registry/-/registry-1.0.8.tgz#2d760e6de37ef2aee47dd4d8596bb68dfef86a5f"
+  integrity sha512-bwmtucYzh3pisv55RHehMrLSy7wmDcXajI1XI82wOIH1cmJKta6BUPymI/hsUK45+aG40hQHSJNe9IZlZUdOiA==
+
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
