@@ -1,0 +1,54 @@
+{
+  "name": "Astrolab Hop hUSDC Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0x483da1a84ec769b63cb9183cff2e9153239e14bf",
+      "chainId": 100,
+      "slug": "swapper",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "StrategyAgentV5": {
+      "contract": "StrategyAgentV5",
+      "address": "0x81C78B13A58DC7394018D7D7dC1d0961a7F9837E",
+      "chainId": 100,
+      "slug": "strategyagentv5",
+      "tx": "0xf8c246ee4861a0f26b955d6eb567dec11d6e848b5810814d535863cd4cb07f0e",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "libraries": {
+        "src/libs/AsAccounting.sol:AsAccounting": "0xb38749097fbd0ffbf742f6c18e605e12a7023d84"
+      }
+    },
+    "HopStrategy": {
+      "contract": "HopStrategy",
+      "address": "0x581d257d7FB40c8596A68bA58610246c6eDd0a07",
+      "chainId": 100,
+      "slug": "hopstrategy",
+      "tx": "0xe5d213d6781e13f0033f5cd8e9c7c4fd026a32ff458b9a84866243b0e42f2ca5",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "args": [
+        [
+          "Astrolab Hop hUSDC",
+          "as.hUSDC",
+          "1"
+        ]
+      ],
+      "libraries": {
+        "src/libs/AsAccounting.sol:AsAccounting": "0xb38749097fbd0ffbf742f6c18e605e12a7023d84"
+      }
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0xb38749097fbd0ffbf742f6c18e605e12a7023d84",
+      "chainId": 100,
+      "slug": "asaccounting",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    }
+  },
+  "slug": "astrolab-hop-husdc-stack",
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+}
