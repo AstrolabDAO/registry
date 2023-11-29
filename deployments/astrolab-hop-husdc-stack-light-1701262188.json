@@ -1,0 +1,25 @@
+{
+  "name": "Astrolab Hop hUSDC Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0x1bca59ef28f7a52ab5fb6b742963ff11e2a0dbf8",
+      "chainId": 100
+    },
+    "StrategyAgentV5": {
+      "contract": "StrategyAgentV5",
+      "address": "0xabD5971E735658f994bfb385add6eBE3058C8cbb",
+      "chainId": 100
+    },
+    "HopStrategy": {
+      "contract": "HopStrategy",
+      "address": "0xD8023D140D034Bc4D242B8AFeBa2cca56BD7F9a4",
+      "chainId": 100
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x21212ac7a57e223ea27994f62ffded6835094726",
+      "chainId": 100
+    }
+  }
+}

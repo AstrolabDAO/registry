@@ -120,6 +120,11 @@
     },
     {
       "inputs": [],
+      "name": "InvalidCalldata",
+      "type": "error"
+    },
+    {
+      "inputs": [],
       "name": "InvalidShortString",
       "type": "error"
     },
@@ -132,11 +137,6 @@
         }
       ],
       "name": "LiquidityTooLow",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "MathOverflowedMulDiv",
       "type": "error"
     },
     {
@@ -846,6 +846,19 @@
           "internalType": "string",
           "name": "",
           "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_rewardsAvailable",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "rewardsAmounts",
+          "type": "uint256[]"
         }
       ],
       "stateMutability": "view",
@@ -1586,6 +1599,25 @@
       "type": "function"
     },
     {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "requestTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "isRedemptionRequestRedeemable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "name": "last",
       "outputs": [
@@ -1686,6 +1718,19 @@
     },
     {
       "inputs": [],
+      "name": "maxClaimableRedemption",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "maxTotalAssets",
       "outputs": [
         {
@@ -1772,6 +1817,25 @@
         {
           "internalType": "uint256",
           "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "pendingRedeemRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -1943,19 +2007,6 @@
           "internalType": "address",
           "name": "",
           "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "rewardsAvailable",
-      "outputs": [
-        {
-          "internalType": "uint256[]",
-          "name": "rewardAmounts",
-          "type": "uint256[]"
         }
       ],
       "stateMutability": "view",
@@ -2188,6 +2239,19 @@
     {
       "inputs": [],
       "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalUnderlyingRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2537,44 +2601,6 @@
       "name": "pause",
       "outputs": [],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        }
-      ],
-      "name": "pendingDepositRequest",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        }
-      ],
-      "name": "pendingRedeemRequest",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {

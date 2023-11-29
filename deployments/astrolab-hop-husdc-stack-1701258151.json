@@ -1,0 +1,51 @@
+{
+  "name": "Astrolab Hop hUSDC Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0x1bca59ef28f7a52ab5fb6b742963ff11e2a0dbf8",
+      "chainId": 100,
+      "slug": "swapper",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "StrategyAgentV5": {
+      "contract": "StrategyAgentV5",
+      "address": "0xd2537a66747c93d814ab9e71bf1ab312cea95a67",
+      "chainId": 100,
+      "slug": "strategyagentv5",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "libraries": {
+        "src/libs/AsAccounting.sol:AsAccounting": "0x21212ac7a57e223ea27994f62ffded6835094726"
+      }
+    },
+    "HopStrategy": {
+      "contract": "HopStrategy",
+      "address": "0x8dbc6022E6Bb26eb1abBF133eDDAfAc8169AC84E",
+      "chainId": 100,
+      "slug": "hopstrategy",
+      "tx": "0x1f8d954c4f43c0ab8b72046443fce3ccf5d3b686261830b6d2052a4e2913334c",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "args": [
+        [
+          "Astrolab Hop hUSDC",
+          "as.hUSDC",
+          "1"
+        ]
+      ],
+      "libraries": {
+        "src/libs/AsAccounting.sol:AsAccounting": "0x21212ac7a57e223ea27994f62ffded6835094726"
+      }
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x21212ac7a57e223ea27994f62ffded6835094726",
+      "chainId": 100,
+      "slug": "asaccounting",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    }
+  },
+  "slug": "astrolab-hop-husdc-stack",
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+}
