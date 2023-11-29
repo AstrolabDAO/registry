@@ -1,11 +1,6 @@
 {
   "abi": [
     {
-      "inputs": [],
-      "name": "MathOverflowedMulDiv",
-      "type": "error"
-    },
-    {
       "inputs": [
         {
           "components": [

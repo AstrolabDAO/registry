@@ -2163,7 +2163,7 @@
       "name": "swapper",
       "outputs": [
         {
-          "internalType": "contract Swapper",
+          "internalType": "contract ISwapper",
           "name": "",
           "type": "address"
         }
@@ -2212,7 +2212,46 @@
     },
     {
       "inputs": [],
+      "name": "totalClaimableUnderlying",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "totalDepositRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalPendingRedemptionRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalPendingUnderlyingRequest",
       "outputs": [
         {
           "internalType": "uint256",
