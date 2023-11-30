@@ -1586,7 +1586,7 @@
           "type": "uint256"
         }
       ],
-      "name": "isRedemptionRequestRedeemable",
+      "name": "isRequestClaimable",
       "outputs": [
         {
           "internalType": "bool",
@@ -1685,7 +1685,26 @@
     },
     {
       "inputs": [],
-      "name": "maxClaimableRedemption",
+      "name": "maxClaimableUnderlying",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "maxRedemptionClaim",
       "outputs": [
         {
           "internalType": "uint256",
