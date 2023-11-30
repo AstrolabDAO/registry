@@ -1423,9 +1423,9 @@
           "type": "address"
         },
         {
-          "internalType": "address[4]",
+          "internalType": "address[3]",
           "name": "_coreAddresses",
-          "type": "address[4]"
+          "type": "address[3]"
         }
       ],
       "name": "init",
@@ -1468,9 +1468,9 @@
           "type": "address"
         },
         {
-          "internalType": "address[4]",
+          "internalType": "address[3]",
           "name": "_coreAddresses",
-          "type": "address[4]"
+          "type": "address[3]"
         },
         {
           "internalType": "address[]",
