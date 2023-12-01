@@ -8,6 +8,35 @@
     {
       "inputs": [
         {
+          "internalType": "uint256",
+          "name": "p1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "p2",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "d2",
+          "type": "uint8"
+        }
+      ],
+      "name": "exchangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "components": [
             {
               "internalType": "int64",
@@ -40,36 +69,7 @@
           "type": "uint8[2]"
         }
       ],
-      "name": "exchangeRateBp",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "p1",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "p2",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint8",
-          "name": "d2",
-          "type": "uint8"
-        }
-      ],
-      "name": "exchangeRateBp",
+      "name": "exchangeRate",
       "outputs": [
         {
           "internalType": "uint256",

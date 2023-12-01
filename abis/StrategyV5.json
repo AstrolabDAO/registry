@@ -1176,6 +1176,19 @@
     },
     {
       "inputs": [],
+      "name": "exchangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "expectedProfits",
       "outputs": [
         {
@@ -1435,74 +1448,7 @@
           "internalType": "struct StrategyBaseParams",
           "name": "_params",
           "type": "tuple"
-        }
-      ],
-      "name": "init",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "components": [
-            {
-              "components": [
-                {
-                  "internalType": "uint64",
-                  "name": "perf",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "mgmt",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "entry",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "exit",
-                  "type": "uint64"
-                }
-              ],
-              "internalType": "struct Fees",
-              "name": "fees",
-              "type": "tuple"
-            },
-            {
-              "internalType": "address",
-              "name": "underlying",
-              "type": "address"
-            },
-            {
-              "internalType": "address[3]",
-              "name": "coreAddresses",
-              "type": "address[3]"
-            },
-            {
-              "internalType": "address[]",
-              "name": "inputs",
-              "type": "address[]"
-            },
-            {
-              "internalType": "uint256[]",
-              "name": "inputWeights",
-              "type": "uint256[]"
-            },
-            {
-              "internalType": "address[]",
-              "name": "rewardTokens",
-              "type": "address[]"
-            }
-          ],
-          "internalType": "struct StrategyBaseParams",
-          "name": "_params",
-          "type": "tuple"
-        }
+        },
       ],
       "name": "init",
       "outputs": [],
@@ -2477,6 +2423,73 @@
           "type": "uint256"
         }
       ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "perf",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "mgmt",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "entry",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "exit",
+                  "type": "uint64"
+                }
+              ],
+              "internalType": "struct Fees",
+              "name": "fees",
+              "type": "tuple"
+            },
+            {
+              "internalType": "address",
+              "name": "underlying",
+              "type": "address"
+            },
+            {
+              "internalType": "address[3]",
+              "name": "coreAddresses",
+              "type": "address[3]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "inputs",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "inputWeights",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardTokens",
+              "type": "address[]"
+            }
+          ],
+          "internalType": "struct StrategyBaseParams",
+          "name": "_params",
+          "type": "tuple"
+        }
+      ],
+      "name": "init",
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
