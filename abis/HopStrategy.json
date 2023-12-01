@@ -216,19 +216,6 @@
         {
           "indexed": true,
           "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "AllocatorUpdate",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
           "name": "owner",
           "type": "address"
         },
@@ -885,19 +872,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "allocator",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "address",
@@ -980,6 +954,19 @@
     {
       "inputs": [],
       "name": "available",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "availableClaimable",
       "outputs": [
         {
           "internalType": "uint256",
@@ -1182,6 +1169,19 @@
           "internalType": "uint256[]",
           "name": "extensions",
           "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "exchangeRateBp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -1393,39 +1393,61 @@
         {
           "components": [
             {
-              "internalType": "uint64",
-              "name": "perf",
-              "type": "uint64"
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "perf",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "mgmt",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "entry",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "exit",
+                  "type": "uint64"
+                }
+              ],
+              "internalType": "struct Fees",
+              "name": "fees",
+              "type": "tuple"
             },
             {
-              "internalType": "uint64",
-              "name": "mgmt",
-              "type": "uint64"
+              "internalType": "address",
+              "name": "underlying",
+              "type": "address"
             },
             {
-              "internalType": "uint64",
-              "name": "entry",
-              "type": "uint64"
+              "internalType": "address[3]",
+              "name": "coreAddresses",
+              "type": "address[3]"
             },
             {
-              "internalType": "uint64",
-              "name": "exit",
-              "type": "uint64"
+              "internalType": "address[]",
+              "name": "inputs",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "inputWeights",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardTokens",
+              "type": "address[]"
             }
           ],
-          "internalType": "struct Fees",
-          "name": "_fees",
+          "internalType": "struct StrategyBaseParams",
+          "name": "_params",
           "type": "tuple"
-        },
-        {
-          "internalType": "address",
-          "name": "_underlying",
-          "type": "address"
-        },
-        {
-          "internalType": "address[3]",
-          "name": "_coreAddresses",
-          "type": "address[3]"
         }
       ],
       "name": "init",
@@ -1438,79 +1460,121 @@
         {
           "components": [
             {
-              "internalType": "uint64",
-              "name": "perf",
-              "type": "uint64"
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "perf",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "mgmt",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "entry",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "exit",
+                  "type": "uint64"
+                }
+              ],
+              "internalType": "struct Fees",
+              "name": "fees",
+              "type": "tuple"
             },
             {
-              "internalType": "uint64",
-              "name": "mgmt",
-              "type": "uint64"
+              "internalType": "address",
+              "name": "underlying",
+              "type": "address"
             },
             {
-              "internalType": "uint64",
-              "name": "entry",
-              "type": "uint64"
+              "internalType": "address[3]",
+              "name": "coreAddresses",
+              "type": "address[3]"
             },
             {
-              "internalType": "uint64",
-              "name": "exit",
-              "type": "uint64"
+              "internalType": "address[]",
+              "name": "inputs",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "inputWeights",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardTokens",
+              "type": "address[]"
             }
           ],
-          "internalType": "struct Fees",
-          "name": "_fees",
+          "internalType": "struct StrategyBaseParams",
+          "name": "_params",
           "type": "tuple"
         },
         {
-          "internalType": "address",
-          "name": "_underlying",
-          "type": "address"
-        },
-        {
-          "internalType": "address[3]",
-          "name": "_coreAddresses",
-          "type": "address[3]"
-        },
-        {
-          "internalType": "address[]",
-          "name": "_inputs",
-          "type": "address[]"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "_inputWeights",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "address[]",
-          "name": "_rewardTokens",
-          "type": "address[]"
-        },
-        {
-          "internalType": "address",
-          "name": "_lpToken",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_rewardPool",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_stableRouter",
-          "type": "address"
-        },
-        {
-          "internalType": "uint8",
-          "name": "_tokenIndex",
-          "type": "uint8"
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pyth",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "underlyingPythId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "inputPythId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "lpToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "rewardPool",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "stableRouter",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "tokenIndex",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct HopStrategy.Params",
+          "name": "_hopParams",
+          "type": "tuple"
         }
       ],
       "name": "init",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "initialized",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -1865,6 +1929,25 @@
       "inputs": [
         {
           "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "pendingUnderlyingRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
           "name": "owner",
           "type": "address"
         },
@@ -2052,37 +2135,6 @@
     {
       "inputs": [
         {
-          "internalType": "address[]",
-          "name": "_inputs",
-          "type": "address[]"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "_weights",
-          "type": "uint256[]"
-        }
-      ],
-      "name": "setInputs",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address[]",
-          "name": "_rewardTokens",
-          "type": "address[]"
-        }
-      ],
-      "name": "setRewardTokens",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
@@ -2198,6 +2250,32 @@
           "internalType": "string",
           "name": "",
           "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAccountedAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAccountedSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -2375,6 +2453,19 @@
     },
     {
       "inputs": [],
+      "name": "tvl",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "underlying",
       "outputs": [
         {
@@ -2395,19 +2486,6 @@
         }
       ],
       "name": "updateAgent",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_allocator",
-          "type": "address"
-        }
-      ],
-      "name": "updateAllocator",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -3053,6 +3131,24 @@
     {
       "inputs": [
         {
+          "internalType": "address[]",
+          "name": "_inputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_weights",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "setInputs",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint256",
           "name": "_maxTotalAssets",
           "type": "uint256"
@@ -3098,6 +3194,19 @@
         }
       ],
       "name": "setRedemptionRequestLocktime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_rewardTokens",
+          "type": "address[]"
+        }
+      ],
+      "name": "setRewardTokens",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"

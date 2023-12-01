@@ -210,19 +210,6 @@
         {
           "indexed": true,
           "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "AllocatorUpdate",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
           "name": "owner",
           "type": "address"
         },
@@ -862,19 +849,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "allocator",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "address",
@@ -957,6 +931,19 @@
     {
       "inputs": [],
       "name": "available",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "availableClaimable",
       "outputs": [
         {
           "internalType": "uint256",
@@ -1384,6 +1371,73 @@
         {
           "components": [
             {
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "perf",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "mgmt",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "entry",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "exit",
+                  "type": "uint64"
+                }
+              ],
+              "internalType": "struct Fees",
+              "name": "fees",
+              "type": "tuple"
+            },
+            {
+              "internalType": "address",
+              "name": "underlying",
+              "type": "address"
+            },
+            {
+              "internalType": "address[3]",
+              "name": "coreAddresses",
+              "type": "address[3]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "inputs",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "inputWeights",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardTokens",
+              "type": "address[]"
+            }
+          ],
+          "internalType": "struct StrategyBaseParams",
+          "name": "_params",
+          "type": "tuple"
+        }
+      ],
+      "name": "init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
               "internalType": "uint64",
               "name": "perf",
               "type": "uint64"
@@ -1798,6 +1852,25 @@
         }
       ],
       "name": "pendingRedeemRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "pendingUnderlyingRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2375,6 +2448,24 @@
     {
       "inputs": [
         {
+          "internalType": "address[]",
+          "name": "_inputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_weights",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "setInputs",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint256",
           "name": "_maxTotalAssets",
           "type": "uint256"
@@ -2420,6 +2511,19 @@
         }
       ],
       "name": "setRedemptionRequestLocktime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_rewardTokens",
+          "type": "address[]"
+        }
+      ],
+      "name": "setRewardTokens",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -2542,6 +2646,32 @@
           "internalType": "string",
           "name": "",
           "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAccountedAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAccountedSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -2715,6 +2845,19 @@
         }
       ],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tvl",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {

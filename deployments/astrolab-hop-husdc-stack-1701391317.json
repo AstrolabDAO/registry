@@ -1,0 +1,65 @@
+{
+  "name": "Astrolab Hop hUSDC Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0x1bca59ef28f7a52ab5fb6b742963ff11e2a0dbf8",
+      "chainId": 100,
+      "slug": "swapper",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": false
+    },
+    "StrategyAgentV5": {
+      "contract": "StrategyAgentV5",
+      "address": "0x22f71Da7d20A83Cfa5d2fD2FC589AEF4150d6454",
+      "chainId": 100,
+      "slug": "strategyagentv5",
+      "tx": "0x65b7a903952e07f82601fffe9ae311a76545b46be908222398aebcdd596557ea",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "libraries": {
+        "src/libs/AsAccounting.sol:AsAccounting": "0x9726435609ecc7a27d430ba3c74605d5a98d3698"
+      }
+    },
+    "HopStrategy": {
+      "contract": "HopStrategy",
+      "address": "0x1661e9954b71B59e465D5D2e7FE98465711c75ec",
+      "chainId": 100,
+      "slug": "hopstrategy",
+      "tx": "0xea91eec6ac1900ffb9fbdc70cdd6877084bea9f61783be2ba3ad4b2ad2317ad5",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "args": [
+        [
+          "Astrolab Hop hUSDC",
+          "as.hUSDC",
+          "1"
+        ]
+      ],
+      "libraries": {
+        "src/libs/AsAccounting.sol:AsAccounting": "0x9726435609ecc7a27d430ba3c74605d5a98d3698",
+        "src/libs/PythUtils.sol:PythUtils": "0x0bbceb2fe8bdcbf03387eb0c11c6598f195efb73"
+      }
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x9726435609ecc7a27d430ba3c74605d5a98d3698",
+      "chainId": 100,
+      "slug": "asaccounting",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": true
+    },
+    "PythUtils": {
+      "contract": "PythUtils",
+      "address": "0x0bbceb2fe8bdcbf03387eb0c11c6598f195efb73",
+      "chainId": 100,
+      "slug": "pythutils",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": true
+    }
+  },
+  "slug": "astrolab-hop-husdc-stack",
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+}
