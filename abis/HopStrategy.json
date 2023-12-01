@@ -1176,19 +1176,6 @@
     },
     {
       "inputs": [],
-      "name": "exchangeRate",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "expectedProfits",
       "outputs": [
         {
@@ -1445,8 +1432,8 @@
               "type": "address[]"
             }
           ],
-          "internalType": "struct StrategyBaseParams",
-          "name": "_params",
+          "internalType": "struct StrategyV5Abstract.StrategyBaseParams",
+          "name": "_baseParams",
           "type": "tuple"
         },
         {
@@ -1462,10 +1449,17 @@
               "type": "bytes32"
             },
             {
-              "internalType": "bytes32",
-              "name": "inputPythId",
-              "type": "bytes32"
-            },
+              "internalType": "bytes32[]",
+              "name": "inputPythIds",
+              "type": "bytes32[]"
+            }
+          ],
+          "internalType": "struct StrategyV5Pyth.PythParams",
+          "name": "_pythParams",
+          "type": "tuple"
+        },
+        {
+          "components": [
             {
               "internalType": "address",
               "name": "lpToken",
@@ -1705,7 +1699,7 @@
       "name": "lpToken",
       "outputs": [
         {
-          "internalType": "contract IERC20",
+          "internalType": "contract IERC20Metadata",
           "name": "",
           "type": "address"
         }
@@ -2066,19 +2060,6 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "setSwapperAllowance",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "name": "shareDecimals",
       "outputs": [
@@ -2119,7 +2100,7 @@
     },
     {
       "inputs": [],
-      "name": "stakedLPBalance",
+      "name": "stakedLpBalance",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2415,9 +2396,28 @@
       "name": "underlying",
       "outputs": [
         {
-          "internalType": "contract ERC20",
+          "internalType": "contract IERC20Metadata",
           "name": "",
           "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "inputId",
+          "type": "uint8"
+        }
+      ],
+      "name": "underlyingExchangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -2439,12 +2439,29 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "_swapper",
-          "type": "address"
+          "components": [
+            {
+              "internalType": "address",
+              "name": "pyth",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "underlyingPythId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32[]",
+              "name": "inputPythIds",
+              "type": "bytes32[]"
+            }
+          ],
+          "internalType": "struct StrategyV5Pyth.PythParams",
+          "name": "_pythParams",
+          "type": "tuple"
         }
       ],
-      "name": "updateSwapper",
+      "name": "updatePyth",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -2590,7 +2607,7 @@
               "type": "address[]"
             }
           ],
-          "internalType": "struct StrategyBaseParams",
+          "internalType": "struct StrategyV5Abstract.StrategyBaseParams",
           "name": "_params",
           "type": "tuple"
         }
@@ -3227,6 +3244,19 @@
     {
       "inputs": [
         {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setSwapperAllowance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address",
           "name": "_input",
           "type": "address"
@@ -3266,6 +3296,19 @@
     {
       "inputs": [],
       "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_swapper",
+          "type": "address"
+        }
+      ],
+      "name": "updateSwapper",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"

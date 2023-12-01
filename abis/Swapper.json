@@ -6,63 +6,28 @@
       "type": "constructor"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        }
-      ],
-      "name": "AddressEmptyCode",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "AddressInsufficientBalance",
+      "inputs": [],
+      "name": "CallRestricted",
       "type": "error"
     },
     {
       "inputs": [],
-      "name": "FailedInnerCall",
+      "name": "RouterError",
       "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        }
-      ],
-      "name": "OwnableInvalidOwner",
+      "inputs": [],
+      "name": "SlippageTooHigh",
       "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "OwnableUnauthorizedAccount",
+      "inputs": [],
+      "name": "UnexpectedOutput",
       "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "token",
-          "type": "address"
-        }
-      ],
-      "name": "SafeERC20FailedOperation",
+      "inputs": [],
+      "name": "WrongPosition",
       "type": "error"
     },
     {
@@ -161,8 +126,86 @@
       "type": "function"
     },
     {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_inputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_outputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_amountsIn",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "_params",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "decodeAndMultiSwap",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "received",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "spent",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_input",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_output",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_params",
+          "type": "bytes"
+        }
+      ],
+      "name": "decodeAndSwap",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "received",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "spent",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [],
-      "name": "approveMax",
+      "name": "isApproveMax",
       "outputs": [
         {
           "internalType": "bool",
@@ -175,7 +218,83 @@
     },
     {
       "inputs": [],
-      "name": "autoRevoke",
+      "name": "isAutoRevoke",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_caller",
+          "type": "address"
+        }
+      ],
+      "name": "isCallerRestricted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_input",
+          "type": "address"
+        }
+      ],
+      "name": "isInputRestricted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_output",
+          "type": "address"
+        }
+      ],
+      "name": "isOutputRestricted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_router",
+          "type": "address"
+        }
+      ],
+      "name": "isRouterRestricted",
       "outputs": [
         {
           "internalType": "bool",
@@ -203,6 +322,55 @@
         }
       ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_inputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_outputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_amountsIn",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_minAmountsOut",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_targetRouters",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "_params",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "multiSwap",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "received",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "spent",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -236,32 +404,6 @@
       "name": "renounceOwnership",
       "outputs": [],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "restrictCaller",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "restrictRouter",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -299,6 +441,32 @@
         }
       ],
       "name": "setCallerRestriction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_inputRestiction",
+          "type": "bool"
+        }
+      ],
+      "name": "setInputRestriction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_outputRestiction",
+          "type": "bool"
+        }
+      ],
+      "name": "setOutputRestriction",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -355,6 +523,11 @@
           "internalType": "uint256",
           "name": "received",
           "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "spent",
+          "type": "uint256"
         }
       ],
       "stateMutability": "payable",
@@ -375,4 +548,3 @@
     }
   ]
 }
-
