@@ -3,7 +3,7 @@
   "units": {
     "Swapper": {
       "contract": "Swapper",
-      "address": "0xc3e5550c1c4ed7acfccd785277c45edf1578da14",
+      "address": "0x597a3df5638cf5f5713f2c74147fbc096e4dbdb0",
       "chainId": 100,
       "slug": "swapper",
       "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
@@ -11,23 +11,23 @@
     },
     "StrategyV5Agent": {
       "contract": "StrategyV5Agent",
-      "address": "0xFDE08Ba7027bf2FEb7A42B647E88c9Fa6788120e",
+      "address": "0x74884AD081204A4e17f72bA7b4B78fC2076a5212",
       "chainId": 100,
       "slug": "strategyv5agent",
-      "tx": "0xde1242be9687ce14731eabf40cf8a45e798bbf9d50874b1c6c988cddeae3f885",
+      "tx": "0xfdd0877c03fed392de8e96225626dd71e95d9b519c9f60a733bf67baabaebe67",
       "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
       "exported": true,
       "verified": true,
       "libraries": {
-        "src/libs/AsAccounting.sol:AsAccounting": "0xb207690B20012Fa877Ee051B461DD53cC56E3C3b"
+        "src/libs/AsAccounting.sol:AsAccounting": "0xF521d26E6684417AFBa58B28A9930C28827c121f"
       }
     },
     "HopMultiStake": {
       "contract": "HopMultiStake",
-      "address": "0x81647D2F012431570B11490C0E59569f770e35f1",
+      "address": "0xe2ed7b2AB815fF9a38a22B488e5133AF685dD6E9",
       "chainId": 100,
       "slug": "hopmultistake",
-      "tx": "0xf9e6cb397eb099e14813a3a50797662250e478c3fed3574728ba0dbab8c6851f",
+      "tx": "0xb96ca0fe1455a1c15a79c6db1f537ed13a0250f5e650c5b6c8e3c2bf5a60299e",
       "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
       "exported": true,
       "verified": true,
@@ -39,13 +39,13 @@
         ]
       ],
       "libraries": {
-        "src/libs/AsAccounting.sol:AsAccounting": "0xb207690B20012Fa877Ee051B461DD53cC56E3C3b",
-        "src/libs/AsMaths.sol:AsMaths": "0x74c72b5a30539F41C770bA878857ff7521D84E59"
+        "src/libs/AsAccounting.sol:AsAccounting": "0xF521d26E6684417AFBa58B28A9930C28827c121f",
+        "src/libs/AsMaths.sol:AsMaths": "0xC7f361F5378b4c2F110e826973e63256bb779324"
       }
     },
     "AsAccounting": {
       "contract": "AsAccounting",
-      "address": "0xb207690B20012Fa877Ee051B461DD53cC56E3C3b",
+      "address": "0xF521d26E6684417AFBa58B28A9930C28827c121f",
       "chainId": 100,
       "slug": "asaccounting",
       "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
@@ -53,7 +53,7 @@
     },
     "AsMaths": {
       "contract": "AsMaths",
-      "address": "0x74c72b5a30539F41C770bA878857ff7521D84E59",
+      "address": "0xC7f361F5378b4c2F110e826973e63256bb779324",
       "chainId": 100,
       "slug": "asmaths",
       "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",

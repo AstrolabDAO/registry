@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@astrolabs/registry@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@astrolabs/registry/-/registry-1.0.19.tgz#861ec637aaf7cacea6829b229538f2b97e984062"
+  integrity sha512-OgXvdDpjAwY/V2d9H0QuJaVL4lwGtu0hWmjeBmB3lFErEA2FSUXDXPrniKCsIyONJinJnJVjyOl3M03fGwgO8w==
+  dependencies:
+    "@astrolabs/registry" "^1.0.8"
+
 "@astrolabs/registry@^1.0.8":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@astrolabs/registry/-/registry-1.0.8.tgz#2d760e6de37ef2aee47dd4d8596bb68dfef86a5f"

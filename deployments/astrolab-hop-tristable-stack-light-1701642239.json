@@ -3,27 +3,27 @@
   "units": {
     "Swapper": {
       "contract": "Swapper",
-      "address": "0xc3e5550c1c4ed7acfccd785277c45edf1578da14",
+      "address": "0x597a3df5638cf5f5713f2c74147fbc096e4dbdb0",
       "chainId": 100
     },
     "StrategyV5Agent": {
       "contract": "StrategyV5Agent",
-      "address": "0xFDE08Ba7027bf2FEb7A42B647E88c9Fa6788120e",
+      "address": "0x74884AD081204A4e17f72bA7b4B78fC2076a5212",
       "chainId": 100
     },
     "HopMultiStake": {
       "contract": "HopMultiStake",
-      "address": "0x81647D2F012431570B11490C0E59569f770e35f1",
+      "address": "0xe2ed7b2AB815fF9a38a22B488e5133AF685dD6E9",
       "chainId": 100
     },
     "AsAccounting": {
       "contract": "AsAccounting",
-      "address": "0xb207690B20012Fa877Ee051B461DD53cC56E3C3b",
+      "address": "0xF521d26E6684417AFBa58B28A9930C28827c121f",
       "chainId": 100
     },
     "AsMaths": {
       "contract": "AsMaths",
-      "address": "0x74c72b5a30539F41C770bA878857ff7521D84E59",
+      "address": "0xC7f361F5378b4c2F110e826973e63256bb779324",
       "chainId": 100
     }
   }

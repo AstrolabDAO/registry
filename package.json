@@ -25,6 +25,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@astrolabs/registry": "^1.0.8"
+    "@astrolabs/registry": "^1.0.19"
   }
 }

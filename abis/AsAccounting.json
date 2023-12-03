@@ -111,16 +111,6 @@
           "components": [
             {
               "internalType": "uint256",
-              "name": "sharePrice",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "sharePriceTimeStamp",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
               "name": "accountedSharePrice",
               "type": "uint256"
             },
