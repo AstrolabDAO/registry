@@ -1201,6 +1201,66 @@
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "exemptionList",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "feeCollector",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fees",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "perf",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "mgmt",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "entry",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "exit",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "bytes32",
           "name": "role",
           "type": "bytes32"
@@ -1346,6 +1406,90 @@
       "type": "function"
     },
     {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "perf",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "mgmt",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "entry",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "exit",
+                  "type": "uint64"
+                }
+              ],
+              "internalType": "struct Fees",
+              "name": "fees",
+              "type": "tuple"
+            },
+            {
+              "internalType": "address",
+              "name": "underlying",
+              "type": "address"
+            },
+            {
+              "internalType": "address[3]",
+              "name": "coreAddresses",
+              "type": "address[3]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "inputs",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint16[]",
+              "name": "inputWeights",
+              "type": "uint16[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardTokens",
+              "type": "address[]"
+            }
+          ],
+          "internalType": "struct StrategyBaseParams",
+          "name": "_baseParams",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "underlyingPriceFeed",
+              "type": "address"
+            },
+            {
+              "internalType": "address[]",
+              "name": "inputPriceFeeds",
+              "type": "address[]"
+            }
+          ],
+          "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
+          "name": "_chainlinkParams",
+          "type": "tuple"
+        }
+      ],
+      "name": "init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "name": "initialized",
       "outputs": [
@@ -1369,9 +1513,9 @@
       "name": "inputWeights",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint16",
           "name": "",
-          "type": "uint256"
+          "type": "uint16"
         }
       ],
       "stateMutability": "view",
@@ -1458,6 +1602,34 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "last",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "accountedSharePrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "feeCollection",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "liquidate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "harvest",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "uint256[8]",
@@ -1516,25 +1688,6 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "lpTokens",
-      "outputs": [
-        {
-          "internalType": "contract IERC20Metadata",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "name": "maxClaimableUnderlying",
       "outputs": [
@@ -1556,6 +1709,32 @@
         }
       ],
       "name": "maxRedemptionClaim",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxTotalAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minLiquidity",
       "outputs": [
         {
           "internalType": "uint256",
@@ -1863,6 +2042,25 @@
     {
       "inputs": [
         {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "rewardTokens",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address",
           "name": "_account",
           "type": "address"
@@ -1876,6 +2074,19 @@
       "name": "setExemption",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "shareDecimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -2088,6 +2299,19 @@
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "underlying",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Metadata",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",

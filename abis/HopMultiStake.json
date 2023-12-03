@@ -1201,6 +1201,66 @@
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "exemptionList",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "feeCollector",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fees",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "perf",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "mgmt",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "entry",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "exit",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "bytes32",
           "name": "role",
           "type": "bytes32"
@@ -1392,9 +1452,9 @@
               "type": "address[]"
             },
             {
-              "internalType": "uint256[]",
+              "internalType": "uint16[]",
               "name": "inputWeights",
-              "type": "uint256[]"
+              "type": "uint16[]"
             },
             {
               "internalType": "address[]",
@@ -1480,9 +1540,9 @@
       "name": "inputWeights",
       "outputs": [
         {
-          "internalType": "uint256",
+          "internalType": "uint16",
           "name": "",
-          "type": "uint256"
+          "type": "uint16"
         }
       ],
       "stateMutability": "view",
@@ -1563,6 +1623,34 @@
           "internalType": "bool",
           "name": "",
           "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "last",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "accountedSharePrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "feeCollection",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "liquidate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "harvest",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -1667,6 +1755,32 @@
         }
       ],
       "name": "maxRedemptionClaim",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxTotalAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "minLiquidity",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2029,6 +2143,19 @@
     },
     {
       "inputs": [],
+      "name": "shareDecimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "sharePrice",
       "outputs": [
         {
@@ -2275,6 +2402,19 @@
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "underlying",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Metadata",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
