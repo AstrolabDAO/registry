@@ -1,0 +1,30 @@
+{
+  "name": "Astrolab Hop TriStable Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0xc3e5550c1c4ed7acfccd785277c45edf1578da14",
+      "chainId": 100
+    },
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0xFDE08Ba7027bf2FEb7A42B647E88c9Fa6788120e",
+      "chainId": 100
+    },
+    "HopMultiStake": {
+      "contract": "HopMultiStake",
+      "address": "0x81647D2F012431570B11490C0E59569f770e35f1",
+      "chainId": 100
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0xb207690B20012Fa877Ee051B461DD53cC56E3C3b",
+      "chainId": 100
+    },
+    "AsMaths": {
+      "contract": "AsMaths",
+      "address": "0x74c72b5a30539F41C770bA878857ff7521D84E59",
+      "chainId": 100
+    }
+  }
+}

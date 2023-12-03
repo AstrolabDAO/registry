@@ -1485,6 +1485,33 @@
           "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
           "name": "_chainlinkParams",
           "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address[]",
+              "name": "lpTokens",
+              "type": "address[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardPools",
+              "type": "address[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "stableRouters",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "tokenIndexes",
+              "type": "uint8[]"
+            }
+          ],
+          "internalType": "struct HopMultiStake.Params",
+          "name": "_hopParams",
+          "type": "tuple"
         }
       ],
       "name": "init",
@@ -2042,6 +2069,25 @@
           "type": "uint256"
         }
       ],
+      "name": "rewardPools",
+      "outputs": [
+        {
+          "internalType": "contract IStakingRewards",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "name": "rewardTokens",
       "outputs": [
         {
@@ -2092,6 +2138,25 @@
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "stableRouters",
+      "outputs": [
+        {
+          "internalType": "contract IStableRouter",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -2150,6 +2215,25 @@
           "internalType": "string",
           "name": "",
           "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenIndexes",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
