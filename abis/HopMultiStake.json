@@ -2576,6 +2576,51 @@
         {
           "components": [
             {
+              "internalType": "uint64",
+              "name": "perf",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "mgmt",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "entry",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "exit",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct Fees",
+          "name": "_fees",
+          "type": "tuple"
+        },
+        {
+          "internalType": "address",
+          "name": "_underlying",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_feeCollector",
+          "type": "address"
+        }
+      ],
+      "name": "init",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
               "components": [
                 {
                   "internalType": "uint64",
@@ -2618,9 +2663,9 @@
               "type": "address[]"
             },
             {
-              "internalType": "uint256[]",
+              "internalType": "uint16[]",
               "name": "inputWeights",
-              "type": "uint256[]"
+              "type": "uint16[]"
             },
             {
               "internalType": "address[]",
@@ -2631,51 +2676,6 @@
           "internalType": "struct StrategyBaseParams",
           "name": "_params",
           "type": "tuple"
-        }
-      ],
-      "name": "init",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "components": [
-            {
-              "internalType": "uint64",
-              "name": "perf",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "mgmt",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "entry",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "exit",
-              "type": "uint64"
-            }
-          ],
-          "internalType": "struct Fees",
-          "name": "_fees",
-          "type": "tuple"
-        },
-        {
-          "internalType": "address",
-          "name": "_underlying",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_feeCollector",
-          "type": "address"
         }
       ],
       "name": "init",
@@ -3216,9 +3216,9 @@
           "type": "address[]"
         },
         {
-          "internalType": "uint256[]",
+          "internalType": "uint16[]",
           "name": "_weights",
-          "type": "uint256[]"
+          "type": "uint16[]"
         }
       ],
       "name": "setInputs",
