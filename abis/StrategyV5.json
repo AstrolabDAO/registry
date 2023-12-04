@@ -1482,6 +1482,33 @@
           "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
           "name": "_chainlinkParams",
           "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address[]",
+              "name": "lpTokens",
+              "type": "address[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardPools",
+              "type": "address[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "stableRouters",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "tokenIndexes",
+              "type": "uint8[]"
+            }
+          ],
+          "internalType": "struct HopMultiStake.Params",
+          "name": "_hopParams",
+          "type": "tuple"
         }
       ],
       "name": "init",
@@ -1570,12 +1597,31 @@
       "type": "function"
     },
     {
-      "inputs": [],
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_index",
+          "type": "uint8"
+        }
+      ],
       "name": "invested",
       "outputs": [
         {
           "internalType": "uint256",
           "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "invested",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "total",
           "type": "uint256"
         }
       ],
@@ -1685,6 +1731,25 @@
         }
       ],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "lpTokens",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Metadata",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -2047,6 +2112,25 @@
           "type": "uint256"
         }
       ],
+      "name": "rewardPools",
+      "outputs": [
+        {
+          "internalType": "contract IStakingRewards",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "name": "rewardTokens",
       "outputs": [
         {
@@ -2097,6 +2181,25 @@
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "stableRouters",
+      "outputs": [
+        {
+          "internalType": "contract IStableRouter",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -2155,6 +2258,25 @@
           "internalType": "string",
           "name": "",
           "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenIndexes",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
         }
       ],
       "stateMutability": "view",
@@ -2473,73 +2595,6 @@
         {
           "components": [
             {
-              "components": [
-                {
-                  "internalType": "uint64",
-                  "name": "perf",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "mgmt",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "entry",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "exit",
-                  "type": "uint64"
-                }
-              ],
-              "internalType": "struct Fees",
-              "name": "fees",
-              "type": "tuple"
-            },
-            {
-              "internalType": "address",
-              "name": "underlying",
-              "type": "address"
-            },
-            {
-              "internalType": "address[3]",
-              "name": "coreAddresses",
-              "type": "address[3]"
-            },
-            {
-              "internalType": "address[]",
-              "name": "inputs",
-              "type": "address[]"
-            },
-            {
-              "internalType": "uint256[]",
-              "name": "inputWeights",
-              "type": "uint256[]"
-            },
-            {
-              "internalType": "address[]",
-              "name": "rewardTokens",
-              "type": "address[]"
-            }
-          ],
-          "internalType": "struct StrategyBaseParams",
-          "name": "_params",
-          "type": "tuple"
-        }
-      ],
-      "name": "init",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "components": [
-            {
               "internalType": "uint64",
               "name": "perf",
               "type": "uint64"
@@ -2583,29 +2638,67 @@
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes[]",
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "perf",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "mgmt",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "entry",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "exit",
+                  "type": "uint64"
+                }
+              ],
+              "internalType": "struct Fees",
+              "name": "fees",
+              "type": "tuple"
+            },
+            {
+              "internalType": "address",
+              "name": "underlying",
+              "type": "address"
+            },
+            {
+              "internalType": "address[3]",
+              "name": "coreAddresses",
+              "type": "address[3]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "inputs",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint16[]",
+              "name": "inputWeights",
+              "type": "uint16[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "rewardTokens",
+              "type": "address[]"
+            }
+          ],
+          "internalType": "struct StrategyBaseParams",
           "name": "_params",
-          "type": "bytes[]"
+          "type": "tuple"
         }
       ],
-      "name": "invest",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "investedAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "iouReceived",
-          "type": "uint256"
-        }
-      ],
+      "name": "init",
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2936,45 +3029,6 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "_receiver",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minShareAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes[]",
-          "name": "_params",
-          "type": "bytes[]"
-        }
-      ],
-      "name": "safeDepositInvest",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "investedAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "iouReceived",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
           "name": "_shares",
           "type": "uint256"
         },
@@ -3113,9 +3167,9 @@
           "type": "address[]"
         },
         {
-          "internalType": "uint256[]",
+          "internalType": "uint16[]",
           "name": "_weights",
-          "type": "uint256[]"
+          "type": "uint16[]"
         }
       ],
       "name": "setInputs",

@@ -1554,30 +1554,20 @@
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes[]",
-          "name": "_params",
-          "type": "bytes[]"
+          "internalType": "uint8",
+          "name": "_index",
+          "type": "uint8"
         }
       ],
-      "name": "invest",
+      "name": "invested",
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "investedAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "iouReceived",
+          "name": "",
           "type": "uint256"
         }
       ],
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -2010,6 +2000,44 @@
       "inputs": [
         {
           "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "previewInvest",
+      "outputs": [
+        {
+          "internalType": "uint256[8]",
+          "name": "amounts",
+          "type": "uint256[8]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "previewLiquidate",
+      "outputs": [
+        {
+          "internalType": "uint256[8]",
+          "name": "amounts",
+          "type": "uint256[8]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
           "name": "_shares",
           "type": "uint256"
         }
@@ -2290,45 +2318,6 @@
         {
           "internalType": "uint256",
           "name": "shares",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "_receiver",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minShareAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes[]",
-          "name": "_params",
-          "type": "bytes[]"
-        }
-      ],
-      "name": "safeDepositInvest",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "investedAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "iouReceived",
           "type": "uint256"
         }
       ],
