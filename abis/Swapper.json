@@ -167,6 +167,40 @@
     {
       "inputs": [
         {
+          "internalType": "address[]",
+          "name": "_inputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_outputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "_params",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "decodeAndMultiSwapBalances",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "received",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "spent",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address",
           "name": "_input",
           "type": "address"
@@ -188,6 +222,40 @@
         }
       ],
       "name": "decodeAndSwap",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "received",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "spent",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_input",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_output",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_params",
+          "type": "bytes"
+        }
+      ],
+      "name": "decodeAndSwapBalance",
       "outputs": [
         {
           "internalType": "uint256",
@@ -374,6 +442,50 @@
       "type": "function"
     },
     {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_inputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_outputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_minAmountsOut",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_targetRouters",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "_params",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "multiSwapBalances",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "received",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "spent",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "name": "owner",
       "outputs": [
@@ -518,6 +630,50 @@
         }
       ],
       "name": "swap",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "received",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "spent",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_input",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_output",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minAmountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_targetRouter",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_callData",
+          "type": "bytes"
+        }
+      ],
+      "name": "swapBalance",
       "outputs": [
         {
           "internalType": "uint256",
