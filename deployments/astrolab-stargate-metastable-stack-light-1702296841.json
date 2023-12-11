@@ -1,0 +1,35 @@
+{
+  "name": "Astrolab Stargate MetaStable Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0xdfe11c1beb360820a6aa9ada899243de459b3894",
+      "chainId": 137
+    },
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0x282A975A87e5814e449d02Be65B2c7E4daB4deC4",
+      "chainId": 137
+    },
+    "StargateMultiStake": {
+      "contract": "StargateMultiStake",
+      "address": "0x78D5ECF1fBd052F7D8914DFBd7e3e5B5cD9aa6BB",
+      "chainId": 137
+    },
+    "AsMaths": {
+      "contract": "AsMaths",
+      "address": "0x1761ff905292548ff2254620166eabd988e48718",
+      "chainId": 137
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x7221ebdd4176b1a21c3c014fd70bab46e697e272",
+      "chainId": 137
+    },
+    "ChainlinkUtils": {
+      "contract": "ChainlinkUtils",
+      "address": "0xa8973d3a983157163e58c02683ed18ae0c7f990a",
+      "chainId": 137
+    }
+  }
+}

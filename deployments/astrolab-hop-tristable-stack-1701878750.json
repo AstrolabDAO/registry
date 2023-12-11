@@ -1,0 +1,70 @@
+{
+  "name": "Astrolab Hop TriStable Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0xdfe11c1beb360820a6aa9ada899243de459b3894",
+      "chainId": 10,
+      "slug": "swapper",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": false
+    },
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0xa8973d3A983157163e58C02683ED18ae0C7f990a",
+      "chainId": 10,
+      "slug": "strategyv5agent",
+      "tx": "0xd2e09419b08ad6356e4ee6f2dcd92ade1b50f6944b5adbc0163ee10d9bf039e3",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "libraries": {
+        "AsAccounting": "0x1761FF905292548fF2254620166eabd988e48718"
+      }
+    },
+    "HopMultiStake": {
+      "contract": "HopMultiStake",
+      "address": "0x9C14F9137Fc7327F336cC73D4218d310F3Faba11",
+      "chainId": 10,
+      "slug": "hopmultistake",
+      "tx": "0x3f547f184b4f52c4ce726dbf0a1adeddb7949fd9a37d0f4b96b36e9058ab110d",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "args": [
+        [
+          "Astrolab Hop TriStable",
+          "as.HTS",
+          "1"
+        ]
+      ],
+      "libraries": {
+        "AsAccounting": "0x1761FF905292548fF2254620166eabd988e48718",
+        "ChainlinkUtils": "0x7221EbDd4176b1A21C3C014fd70bAB46E697E272"
+      }
+    },
+    "AsMaths": {
+      "contract": "AsMaths",
+      "address": "0x78D5ECF1fBd052F7D8914DFBd7e3e5B5cD9aa6BB",
+      "chainId": 10,
+      "slug": "asmaths",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x1761FF905292548fF2254620166eabd988e48718",
+      "chainId": 10,
+      "slug": "asaccounting",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "ChainlinkUtils": {
+      "contract": "ChainlinkUtils",
+      "address": "0x7221EbDd4176b1A21C3C014fd70bAB46E697E272",
+      "chainId": 10,
+      "slug": "chainlinkutils",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    }
+  },
+  "slug": "astrolab-hop-tristable-stack",
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+}

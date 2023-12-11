@@ -1,6 +1,49 @@
 {
   "abi": [
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "collector",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalAssets",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "sharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "profit",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "feesAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "sharesMinted",
+          "type": "uint256"
+        }
+      ],
+      "name": "FeeCollection",
+      "type": "event"
+    },
+    {
       "inputs": [
         {
           "components": [
@@ -22,6 +65,11 @@
             {
               "internalType": "uint64",
               "name": "exit",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "flash",
               "type": "uint64"
             }
           ],
@@ -50,6 +98,11 @@
               "internalType": "uint64",
               "name": "exit",
               "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "flash",
+              "type": "uint64"
             }
           ],
           "internalType": "struct Fees",
@@ -71,85 +124,31 @@
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "totalAssets",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "sharePrice",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "uint64",
-              "name": "perf",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "mgmt",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "entry",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "exit",
-              "type": "uint64"
-            }
-          ],
-          "internalType": "struct Fees",
-          "name": "fees",
-          "type": "tuple"
-        },
-        {
-          "components": [
-            {
-              "internalType": "uint256",
-              "name": "accountedSharePrice",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "feeCollection",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "liquidate",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "harvest",
-              "type": "uint256"
-            }
-          ],
-          "internalType": "struct Checkpoint",
-          "name": "last",
-          "type": "tuple"
+          "internalType": "contract IAs4626",
+          "name": "self",
+          "type": "IAs4626"
         }
       ],
       "name": "computeFees",
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "perfFeesAmount",
+          "name": "assets",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "mgmtFeesAmount",
+          "name": "price",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
           "name": "profit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "feesAmount",
           "type": "uint256"
         }
       ],

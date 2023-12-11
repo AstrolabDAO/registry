@@ -1,0 +1,70 @@
+{
+  "name": "Astrolab Hop MetaStable Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0xc3e5550c1c4ed7acfccd785277c45edf1578da14",
+      "chainId": 100,
+      "slug": "swapper",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": false
+    },
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0xbb28c46d61c7DF667e2564bF99F7c28AaF004121",
+      "chainId": 100,
+      "slug": "strategyv5agent",
+      "tx": "0xd13afd5b05ed2084c4ad2a9e423032de44c0f64550a6a6218404937cd0daf58a",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "libraries": {
+        "AsAccounting": "0x6380fC35d7b95a0457d87b2b69D8A2606Af3854d"
+      }
+    },
+    "HopMultiStake": {
+      "contract": "HopMultiStake",
+      "address": "0x402F673D82c073120B8fdF5e62FA92Fd6d5e4f2c",
+      "chainId": 100,
+      "slug": "hopmultistake",
+      "tx": "0x4d0b2fe7b570e47a0c1e2d47775fe163af801691d7d4233133d6b1a4a388303b",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "args": [
+        [
+          "Astrolab Hop MetaStable",
+          "as.HMS",
+          "1"
+        ]
+      ],
+      "libraries": {
+        "AsAccounting": "0x6380fC35d7b95a0457d87b2b69D8A2606Af3854d",
+        "ChainlinkUtils": "0xECdD53a61821eee424249e96A435992A3E3753Cb"
+      }
+    },
+    "AsMaths": {
+      "contract": "AsMaths",
+      "address": "0x2AB548611F9CD3e822cd3509ea7d3d11956B2F7E",
+      "chainId": 100,
+      "slug": "asmaths",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x6380fC35d7b95a0457d87b2b69D8A2606Af3854d",
+      "chainId": 100,
+      "slug": "asaccounting",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "ChainlinkUtils": {
+      "contract": "ChainlinkUtils",
+      "address": "0xECdD53a61821eee424249e96A435992A3E3753Cb",
+      "chainId": 100,
+      "slug": "chainlinkutils",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    }
+  },
+  "slug": "astrolab-hop-metastable-stack",
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+}

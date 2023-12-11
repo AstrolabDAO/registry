@@ -1,0 +1,70 @@
+{
+  "name": "Astrolab Stargate MetaStable Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0x282a975a87e5814e449d02be65b2c7e4dab4dec4",
+      "chainId": 137,
+      "slug": "swapper",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": false
+    },
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0xF9b9fFdC08aEd8cCD21cd1Fd1d61E294b5c05133",
+      "chainId": 137,
+      "slug": "strategyv5agent",
+      "tx": "0x8494909c47e49efb5425d8ad43c715c17edb128c60b24966e56eba89a6429f5b",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "libraries": {
+        "AsAccounting": "0x7221ebdd4176b1a21c3c014fd70bab46e697e272"
+      }
+    },
+    "StargateMultiStake": {
+      "contract": "StargateMultiStake",
+      "address": "0x86Cbd9c8Ea72ef293f3c707203D469EAE0330be3",
+      "chainId": 137,
+      "slug": "stargatemultistake",
+      "tx": "0x4f67746b2a4f11477d877703fec0dc32dca221293f5934d6d7cd6ee9f567640b",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "args": [
+        [
+          "Astrolab Stargate MetaStable",
+          "as.SMS",
+          "1"
+        ]
+      ],
+      "libraries": {
+        "AsAccounting": "0x7221ebdd4176b1a21c3c014fd70bab46e697e272",
+        "ChainlinkUtils": "0xa8973d3a983157163e58c02683ed18ae0c7f990a"
+      }
+    },
+    "AsMaths": {
+      "contract": "AsMaths",
+      "address": "0x1761ff905292548ff2254620166eabd988e48718",
+      "chainId": 137,
+      "slug": "asmaths",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x7221ebdd4176b1a21c3c014fd70bab46e697e272",
+      "chainId": 137,
+      "slug": "asaccounting",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "ChainlinkUtils": {
+      "contract": "ChainlinkUtils",
+      "address": "0xa8973d3a983157163e58c02683ed18ae0c7f990a",
+      "chainId": 137,
+      "slug": "chainlinkutils",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    }
+  },
+  "slug": "astrolab-stargate-metastable-stack",
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+}

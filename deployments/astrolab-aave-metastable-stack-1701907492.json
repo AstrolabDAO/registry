@@ -1,0 +1,68 @@
+{
+  "name": "Astrolab Aave Metastable Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0xdfe11c1beb360820a6aa9ada899243de459b3894",
+      "chainId": 10,
+      "slug": "swapper",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": false
+    },
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0xbb28c46d61c7df667e2564bf99f7c28aaf004121",
+      "chainId": 10,
+      "slug": "strategyv5agent",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "verified": true,
+      "libraries": {
+        "AsAccounting": "0x1761ff905292548ff2254620166eabd988e48718"
+      }
+    },
+    "AaveMultiStake": {
+      "contract": "AaveMultiStake",
+      "address": "0x9E49770512E47C679B675Cf5Bb141a7bdBFb28Fc",
+      "chainId": 10,
+      "slug": "aavemultistake",
+      "tx": "0x31a98fc2911683e1e067f6ed5184ef55c308b9c59a5631cb51eeb64766a74586",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345",
+      "exported": true,
+      "verified": true,
+      "args": [
+        [
+          "Astrolab Aave Metastable",
+          "as.AAM",
+          "1"
+        ]
+      ],
+      "libraries": {
+        "AsAccounting": "0x1761ff905292548ff2254620166eabd988e48718",
+        "ChainlinkUtils": "0xecdd53a61821eee424249e96a435992a3e3753cb"
+      }
+    },
+    "AsMaths": {
+      "contract": "AsMaths",
+      "address": "0x78d5ecf1fbd052f7d8914dfbd7e3e5b5cd9aa6bb",
+      "chainId": 10,
+      "slug": "asmaths",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x1761ff905292548ff2254620166eabd988e48718",
+      "chainId": 10,
+      "slug": "asaccounting",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    },
+    "ChainlinkUtils": {
+      "contract": "ChainlinkUtils",
+      "address": "0xecdd53a61821eee424249e96a435992a3e3753cb",
+      "chainId": 10,
+      "slug": "chainlinkutils",
+      "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+    }
+  },
+  "slug": "astrolab-aave-metastable-stack",
+  "deployer": "0x026E222AC6aD0BA8AD04efd7BCf6025e40457345"
+}

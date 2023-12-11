@@ -1,0 +1,35 @@
+{
+  "name": "Astrolab Aave Metastable Stack",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0xdfe11c1beb360820a6aa9ada899243de459b3894",
+      "chainId": 10
+    },
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0xa8973d3a983157163e58c02683ed18ae0c7f990a",
+      "chainId": 10
+    },
+    "AaveMultiStake": {
+      "contract": "AaveMultiStake",
+      "address": "0x6EAa248975e5EC60189f3b32d97Aa1a60f177d9c",
+      "chainId": 10
+    },
+    "AsMaths": {
+      "contract": "AsMaths",
+      "address": "0x78d5ecf1fbd052f7d8914dfbd7e3e5b5cd9aa6bb",
+      "chainId": 10
+    },
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x1761ff905292548ff2254620166eabd988e48718",
+      "chainId": 10
+    },
+    "ChainlinkUtils": {
+      "contract": "ChainlinkUtils",
+      "address": "0x7221ebdd4176b1a21c3c014fd70bab46e697e272",
+      "chainId": 10
+    }
+  }
+}

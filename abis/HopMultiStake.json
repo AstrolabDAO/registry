@@ -76,30 +76,14 @@
       "type": "error"
     },
     {
-      "inputs": [],
-      "name": "FeeError",
-      "type": "error"
-    },
-    {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_GraceTimestamp",
+          "name": "_graceTimestamp",
           "type": "uint256"
         }
       ],
       "name": "GracePeriodElapsed",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "InsufficientFunds",
       "type": "error"
     },
     {
@@ -132,27 +116,11 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "assets",
-          "type": "uint256"
-        }
-      ],
-      "name": "LiquidityTooLow",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_PendingTimestamp",
+          "name": "_pendingTimestamp",
           "type": "uint256"
         }
       ],
       "name": "PendingPeriodNotElapsed",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "SelfMintNotAllowed",
       "type": "error"
     },
     {
@@ -164,11 +132,6 @@
         }
       ],
       "name": "StringTooLong",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "TransactionExpired",
       "type": "error"
     },
     {
@@ -190,11 +153,6 @@
         }
       ],
       "name": "WrongRequest",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "WrongToken",
       "type": "error"
     },
     {
@@ -287,65 +245,8 @@
     },
     {
       "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "assets",
-          "type": "uint256"
-        }
-      ],
-      "name": "DepositRequest",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "assets",
-          "type": "uint256"
-        }
-      ],
-      "name": "DepositRequestCanceled",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
       "inputs": [],
       "name": "EIP712DomainChanged",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "feeCollector",
-          "type": "address"
-        }
-      ],
-      "name": "FeeCollectorUpdated",
       "type": "event"
     },
     {
@@ -388,7 +289,20 @@
           "type": "address"
         }
       ],
-      "name": "FeesCollected",
+      "name": "FeeCollection",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "feeCollector",
+          "type": "address"
+        }
+      ],
+      "name": "FeeCollectorUpdate",
       "type": "event"
     },
     {
@@ -423,7 +337,7 @@
           "type": "tuple"
         }
       ],
-      "name": "FeesUpdated",
+      "name": "FeesUpdate",
       "type": "event"
     },
     {
@@ -682,7 +596,7 @@
           "type": "uint256"
         }
       ],
-      "name": "SharePriceUpdated",
+      "name": "SharePriceUpdate",
       "type": "event"
     },
     {
@@ -875,19 +789,6 @@
           "internalType": "string",
           "name": "",
           "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "_rewardsAvailable",
-      "outputs": [
-        {
-          "internalType": "uint256[]",
-          "name": "amounts",
-          "type": "uint256[]"
         }
       ],
       "stateMutability": "view",
@@ -1504,9 +1405,9 @@
               "type": "address[]"
             },
             {
-              "internalType": "address[]",
+              "internalType": "address[][]",
               "name": "rewardPools",
-              "type": "address[]"
+              "type": "address[][]"
             },
             {
               "internalType": "address[]",
@@ -1763,25 +1664,6 @@
         }
       ],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "lpTokens",
-      "outputs": [
-        {
-          "internalType": "contract IERC20Metadata",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -2081,44 +1963,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "req",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "redemptionLocktime",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "totalDeposit",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "totalRedemption",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "totalUnderlying",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "totalClaimableRedemption",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "totalClaimableUnderlying",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "bytes32",
@@ -2144,10 +1988,10 @@
           "type": "uint256"
         }
       ],
-      "name": "rewardPools",
+      "name": "rewardTokens",
       "outputs": [
         {
-          "internalType": "contract IStakingRewards",
+          "internalType": "address",
           "name": "",
           "type": "address"
         }
@@ -2156,19 +2000,13 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "rewardTokens",
+      "inputs": [],
+      "name": "rewardsAvailable",
       "outputs": [
         {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
         }
       ],
       "stateMutability": "view",
@@ -2188,6 +2026,59 @@
         }
       ],
       "name": "setExemption",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address[]",
+              "name": "lpTokens",
+              "type": "address[]"
+            },
+            {
+              "internalType": "address[][]",
+              "name": "rewardPools",
+              "type": "address[][]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "stableRouters",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "tokenIndexes",
+              "type": "uint8[]"
+            }
+          ],
+          "internalType": "struct HopMultiStake.Params",
+          "name": "_params",
+          "type": "tuple"
+        }
+      ],
+      "name": "setParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_rewardPools",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_index",
+          "type": "uint8"
+        }
+      ],
+      "name": "setRewardPools",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -2213,25 +2104,6 @@
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "stableRouters",
-      "outputs": [
-        {
-          "internalType": "contract IStableRouter",
-          "name": "",
-          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -2290,25 +2162,6 @@
           "internalType": "string",
           "name": "",
           "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "tokenIndexes",
-      "outputs": [
-        {
-          "internalType": "uint8",
-          "name": "",
-          "type": "uint8"
         }
       ],
       "stateMutability": "view",
@@ -3019,7 +2872,7 @@
         },
         {
           "internalType": "bool",
-          "name": "_onlyETH",
+          "name": "_native",
           "type": "bool"
         }
       ],
