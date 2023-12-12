@@ -134,35 +134,6 @@
       "type": "error"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "WrongRequest",
-      "type": "error"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "AgentUpdate",
-      "type": "event"
-    },
-    {
       "anonymous": false,
       "inputs": [
         {
@@ -241,19 +212,6 @@
       "anonymous": false,
       "inputs": [],
       "name": "EIP712DomainChanged",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "feeCollector",
-          "type": "address"
-        }
-      ],
-      "name": "FeeCollectorUpdate",
       "type": "event"
     },
     {
@@ -344,19 +302,6 @@
       "anonymous": false,
       "inputs": [
         {
-          "indexed": true,
-          "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "InputUpdate",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
           "indexed": false,
           "internalType": "uint256",
           "name": "amount",
@@ -395,19 +340,6 @@
         }
       ],
       "name": "Liquidate",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "maxTotalAssets",
-          "type": "uint256"
-        }
-      ],
-      "name": "MaxTotalAssetsSet",
       "type": "event"
     },
     {
@@ -552,51 +484,6 @@
       "anonymous": false,
       "inputs": [
         {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "SetSwapperAllowance",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "shareprice",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "timestamp",
-          "type": "uint256"
-        }
-      ],
-      "name": "SharePriceUpdate",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "SwapperUpdate",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
           "indexed": true,
           "internalType": "address",
           "name": "from",
@@ -616,31 +503,6 @@
         }
       ],
       "name": "Transfer",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "addr",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "spent",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "received",
-          "type": "uint256"
-        }
-      ],
-      "name": "UnderlyingUpdate",
       "type": "event"
     },
     {
@@ -850,13 +712,19 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "asset",
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_index",
+          "type": "uint8"
+        }
+      ],
+      "name": "assetExchangeRate",
       "outputs": [
         {
-          "internalType": "address",
+          "internalType": "uint256",
           "name": "",
-          "type": "address"
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -915,7 +783,7 @@
     },
     {
       "inputs": [],
-      "name": "claimableUnderlyingFees",
+      "name": "claimableAssetFees",
       "outputs": [
         {
           "internalType": "uint256",
@@ -1003,7 +871,7 @@
           "type": "uint8"
         }
       ],
-      "stateMutability": "pure",
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -1338,7 +1206,7 @@
             },
             {
               "internalType": "address",
-              "name": "underlying",
+              "name": "asset",
               "type": "address"
             },
             {
@@ -1370,7 +1238,7 @@
           "components": [
             {
               "internalType": "address",
-              "name": "underlyingPriceFeed",
+              "name": "assetPriceFeed",
               "type": "address"
             },
             {
@@ -1386,23 +1254,28 @@
         {
           "components": [
             {
-              "internalType": "address",
-              "name": "lpStaker",
-              "type": "address"
-            },
-            {
               "internalType": "address[]",
-              "name": "lps",
+              "name": "lpTokens",
               "type": "address[]"
             },
             {
-              "internalType": "uint16[]",
-              "name": "stakingIds",
-              "type": "uint16[]"
+              "internalType": "address[][]",
+              "name": "rewardPools",
+              "type": "address[][]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "stableRouters",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "tokenIndexes",
+              "type": "uint8[]"
             }
           ],
-          "internalType": "struct StargateMultiStake.Params",
-          "name": "_stargateParams",
+          "internalType": "struct HopMultiStake.Params",
+          "name": "_hopParams",
           "type": "tuple"
         }
       ],
@@ -2004,27 +1877,50 @@
         {
           "components": [
             {
-              "internalType": "address",
-              "name": "lpStaker",
-              "type": "address"
-            },
-            {
               "internalType": "address[]",
-              "name": "lps",
+              "name": "lpTokens",
               "type": "address[]"
             },
             {
-              "internalType": "uint16[]",
-              "name": "stakingIds",
-              "type": "uint16[]"
+              "internalType": "address[][]",
+              "name": "rewardPools",
+              "type": "address[][]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "stableRouters",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "tokenIndexes",
+              "type": "uint8[]"
             }
           ],
-          "internalType": "struct StargateMultiStake.Params",
+          "internalType": "struct HopMultiStake.Params",
           "name": "_params",
           "type": "tuple"
         }
       ],
       "name": "setParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_rewardPools",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_index",
+          "type": "uint8"
+        }
+      ],
+      "name": "setRewardPools",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -2128,7 +2024,7 @@
     },
     {
       "inputs": [],
-      "name": "totalPendingRedemptionRequest",
+      "name": "totalPendingAssetRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2141,7 +2037,7 @@
     },
     {
       "inputs": [],
-      "name": "totalPendingUnderlyingRequest",
+      "name": "totalPendingRedemptionRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2221,25 +2117,6 @@
     {
       "inputs": [
         {
-          "internalType": "uint8",
-          "name": "_index",
-          "type": "uint8"
-        }
-      ],
-      "name": "underlyingExchangeRate",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "address",
           "name": "_agent",
           "type": "address"
@@ -2253,10 +2130,33 @@
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_swapData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "_priceFeed",
+          "type": "address"
+        }
+      ],
+      "name": "updateAsset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "components": [
             {
               "internalType": "address",
-              "name": "underlyingPriceFeed",
+              "name": "assetPriceFeed",
               "type": "address"
             },
             {
@@ -2271,29 +2171,6 @@
         }
       ],
       "name": "updateChainlink",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_underlying",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "_swapData",
-          "type": "bytes"
-        },
-        {
-          "internalType": "address",
-          "name": "_priceFeed",
-          "type": "address"
-        }
-      ],
-      "name": "updateUnderlying",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -2410,7 +2287,7 @@
         },
         {
           "internalType": "address",
-          "name": "_underlying",
+          "name": "_asset",
           "type": "address"
         },
         {
@@ -2462,7 +2339,7 @@
             },
             {
               "internalType": "address",
-              "name": "underlying",
+              "name": "asset",
               "type": "address"
             },
             {
@@ -2649,7 +2526,7 @@
           "type": "address"
         }
       ],
-      "name": "pendingRedeemRequest",
+      "name": "pendingAssetRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2668,7 +2545,7 @@
           "type": "address"
         }
       ],
-      "name": "pendingUnderlyingRequest",
+      "name": "pendingRedeemRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -3222,20 +3099,7 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "_swapper",
-          "type": "address"
-        }
-      ],
-      "name": "updateSwapper",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_underlying",
+          "name": "_asset",
           "type": "address"
         },
         {
@@ -3244,7 +3108,20 @@
           "type": "bytes"
         }
       ],
-      "name": "updateUnderlying",
+      "name": "updateAsset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_swapper",
+          "type": "address"
+        }
+      ],
+      "name": "updateSwapper",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
