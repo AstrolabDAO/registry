@@ -76,38 +76,6 @@
           "internalType": "struct Fees",
           "name": "_fees",
           "type": "tuple"
-        },
-        {
-          "components": [
-            {
-              "internalType": "uint64",
-              "name": "perf",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "mgmt",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "entry",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "exit",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "flash",
-              "type": "uint64"
-            }
-          ],
-          "internalType": "struct Fees",
-          "name": "_maxFees",
-          "type": "tuple"
         }
       ],
       "name": "checkFees",
