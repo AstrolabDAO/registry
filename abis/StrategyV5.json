@@ -1312,6 +1312,11 @@
         },
         {
           "internalType": "uint256",
+          "name": "sharePrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
           "name": "accountedSharePrice",
           "type": "uint256"
         },
@@ -1322,12 +1327,12 @@
         },
         {
           "internalType": "uint256",
-          "name": "accountedTotalAssets",
+          "name": "accountedAssets",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "accountedTotalSupply",
+          "name": "accountedSupply",
           "type": "uint256"
         }
       ],
@@ -2568,14 +2573,14 @@
           "type": "uint256"
         },
         {
-          "internalType": "address",
-          "name": "_receiver",
-          "type": "address"
-        },
-        {
           "internalType": "uint256",
           "name": "_minShareAmount",
           "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
         }
       ],
       "name": "safeDeposit",
@@ -2650,7 +2655,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "",
+          "name": "amount",
           "type": "uint256"
         }
       ],
