@@ -2272,14 +2272,14 @@
           "type": "uint256"
         },
         {
-          "internalType": "address",
-          "name": "_receiver",
-          "type": "address"
-        },
-        {
           "internalType": "uint256",
           "name": "_minShareAmount",
           "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
         },
         {
           "internalType": "bytes",
