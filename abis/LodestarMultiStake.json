@@ -1101,7 +1101,7 @@
           "components": [
             {
               "internalType": "address[]",
-              "name": "mTokens",
+              "name": "lTokens",
               "type": "address[]"
             },
             {
@@ -1110,8 +1110,8 @@
               "type": "address"
             }
           ],
-          "internalType": "struct MoonwellMultiStake.Params",
-          "name": "_venusParams",
+          "internalType": "struct LodestarMultiStake.Params",
+          "name": "_lodestarParams",
           "type": "tuple"
         }
       ],
@@ -1681,7 +1681,7 @@
           "components": [
             {
               "internalType": "address[]",
-              "name": "mTokens",
+              "name": "lTokens",
               "type": "address[]"
             },
             {
@@ -1690,7 +1690,7 @@
               "type": "address"
             }
           ],
-          "internalType": "struct MoonwellMultiStake.Params",
+          "internalType": "struct LodestarMultiStake.Params",
           "name": "_params",
           "type": "tuple"
         }

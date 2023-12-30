@@ -976,6 +976,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "components": [
@@ -1111,7 +1124,7 @@
             }
           ],
           "internalType": "struct MoonwellMultiStake.Params",
-          "name": "_venusParams",
+          "name": "_moonwellParams",
           "type": "tuple"
         }
       ],
@@ -1590,6 +1603,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "proxyType",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "bytes32",
@@ -1941,7 +1967,7 @@
             }
           ],
           "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
-          "name": "_ChainlinkParams",
+          "name": "_chainlinkParams",
           "type": "tuple"
         }
       ],
