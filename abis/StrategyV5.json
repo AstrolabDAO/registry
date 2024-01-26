@@ -1428,6 +1428,19 @@
     },
     {
       "inputs": [],
+      "name": "lpTokens",
+      "outputs": [
+        {
+          "internalType": "address[8]",
+          "name": "",
+          "type": "address[8]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "maxLoan",
       "outputs": [
         {
@@ -1715,6 +1728,34 @@
         }
       ],
       "name": "setExemption",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_inputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_cTokens",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint16[]",
+          "name": "_weights",
+          "type": "uint16[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_priceFeeds",
+          "type": "address[]"
+        }
+      ],
+      "name": "setInputs",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
