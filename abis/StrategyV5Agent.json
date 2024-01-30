@@ -716,12 +716,12 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_operator",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
         }
       ],

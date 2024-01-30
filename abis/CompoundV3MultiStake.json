@@ -1428,19 +1428,6 @@
     },
     {
       "inputs": [],
-      "name": "lpTokens",
-      "outputs": [
-        {
-          "internalType": "address[8]",
-          "name": "",
-          "type": "address[8]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "maxLoan",
       "outputs": [
         {
@@ -1737,11 +1724,6 @@
         {
           "internalType": "address[]",
           "name": "_inputs",
-          "type": "address[]"
-        },
-        {
-          "internalType": "address[]",
-          "name": "_cTokens",
           "type": "address[]"
         },
         {
@@ -2099,12 +2081,12 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_operator",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
         }
       ],
