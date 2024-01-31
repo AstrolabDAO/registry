@@ -3,6 +3,30 @@
     {
       "inputs": [
         {
+          "internalType": "int256",
+          "name": "price",
+          "type": "int256"
+        }
+      ],
+      "name": "InvalidOrStalePrice",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "VALIDITY_PERIOD_TIME",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "contract IChainlinkAggregatorV3[2]",
           "name": "_priceFeeds",
           "type": "IChainlinkAggregatorV3[2]"
