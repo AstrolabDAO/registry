@@ -84,6 +84,22 @@
       "type": "error"
     },
     {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "updateTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "value",
+          "type": "int256"
+        }
+      ],
+      "name": "InvalidOrStaleValue",
+      "type": "error"
+    },
+    {
       "inputs": [],
       "name": "InvalidPermit",
       "type": "error"
@@ -625,25 +641,6 @@
     {
       "inputs": [
         {
-          "internalType": "uint8",
-          "name": "_index",
-          "type": "uint8"
-        }
-      ],
-      "name": "assetExchangeRate",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "address",
           "name": "_owner",
           "type": "address"
@@ -801,6 +798,25 @@
     {
       "inputs": [
         {
+          "internalType": "uint8",
+          "name": "_index",
+          "type": "uint8"
+        }
+      ],
+      "name": "exchangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address",
           "name": "",
           "type": "address"
@@ -823,6 +839,25 @@
       "outputs": [
         {
           "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "feedByAsset",
+      "outputs": [
+        {
+          "internalType": "contract IChainlinkAggregatorV3",
           "name": "",
           "type": "address"
         }
@@ -1115,13 +1150,23 @@
           "components": [
             {
               "internalType": "address",
-              "name": "assetPriceFeed",
+              "name": "assetFeed",
               "type": "address"
             },
             {
+              "internalType": "uint256",
+              "name": "assetFeedValidity",
+              "type": "uint256"
+            },
+            {
               "internalType": "address[]",
-              "name": "inputPriceFeeds",
+              "name": "inputFeeds",
               "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "inputFeedValidities",
+              "type": "uint256[]"
             }
           ],
           "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
@@ -1428,19 +1473,6 @@
     },
     {
       "inputs": [],
-      "name": "lpTokens",
-      "outputs": [
-        {
-          "internalType": "address[8]",
-          "name": "",
-          "type": "address[8]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "maxLoan",
       "outputs": [
         {
@@ -1740,19 +1772,19 @@
           "type": "address[]"
         },
         {
-          "internalType": "address[]",
-          "name": "_cTokens",
-          "type": "address[]"
-        },
-        {
           "internalType": "uint16[]",
           "name": "_weights",
           "type": "uint16[]"
         },
         {
           "internalType": "address[]",
-          "name": "_priceFeeds",
+          "name": "_feeds",
           "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_validities",
+          "type": "uint256[]"
         }
       ],
       "name": "setInputs",
@@ -1781,6 +1813,29 @@
         }
       ],
       "name": "setParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IChainlinkAggregatorV3",
+          "name": "_feed",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_validity",
+          "type": "uint256"
+        }
+      ],
+      "name": "setPriceFeed",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -2000,9 +2055,14 @@
           "type": "bytes"
         },
         {
-          "internalType": "address",
-          "name": "_priceFeed",
+          "internalType": "contract IChainlinkAggregatorV3",
+          "name": "_feed",
           "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_validity",
+          "type": "uint256"
         }
       ],
       "name": "updateAsset",
@@ -2016,13 +2076,23 @@
           "components": [
             {
               "internalType": "address",
-              "name": "assetPriceFeed",
+              "name": "assetFeed",
               "type": "address"
             },
             {
+              "internalType": "uint256",
+              "name": "assetFeedValidity",
+              "type": "uint256"
+            },
+            {
               "internalType": "address[]",
-              "name": "inputPriceFeeds",
+              "name": "inputFeeds",
               "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "inputFeedValidities",
+              "type": "uint256[]"
             }
           ],
           "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
@@ -2033,6 +2103,25 @@
       "name": "updateChainlink",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IChainlinkAggregatorV3",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "validityByFeed",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -2099,12 +2188,12 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_operator",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
         }
       ],
@@ -2116,7 +2205,13 @@
     {
       "inputs": [],
       "name": "collectFees",
-      "outputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2432,7 +2527,7 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_owner",
           "type": "address"
         }
       ],
@@ -2451,7 +2546,7 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_owner",
           "type": "address"
         }
       ],
@@ -2460,6 +2555,30 @@
         {
           "internalType": "uint256",
           "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        }
+      ],
+      "name": "previewDeposit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "shares",
           "type": "uint256"
         }
       ],
@@ -2494,6 +2613,54 @@
         }
       ],
       "name": "previewMint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        }
+      ],
+      "name": "previewMint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "previewRedeem",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2546,6 +2713,30 @@
       "inputs": [
         {
           "internalType": "uint256",
+          "name": "_assets",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "previewWithdraw",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
           "name": "_shares",
           "type": "uint256"
         },
@@ -2575,17 +2766,17 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "shares",
+          "name": "_shares",
           "type": "uint256"
         },
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_operator",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
         }
       ],
@@ -2977,6 +3168,11 @@
           "internalType": "bytes",
           "name": "_swapData",
           "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_priceFactor",
+          "type": "uint256"
         }
       ],
       "name": "updateAsset",
