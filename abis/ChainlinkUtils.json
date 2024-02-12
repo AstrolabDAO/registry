@@ -3,46 +3,22 @@
     {
       "inputs": [
         {
-          "internalType": "int256",
-          "name": "price",
-          "type": "int256"
-        }
-      ],
-      "name": "InvalidOrStalePrice",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "VALIDITY_PERIOD_TIME",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "contract IChainlinkAggregatorV3[2]",
-          "name": "_priceFeeds",
+          "name": "_feeds",
           "type": "IChainlinkAggregatorV3[2]"
         },
         {
-          "internalType": "uint8",
-          "name": "_baseDecimals",
-          "type": "uint8"
+          "internalType": "uint8[2]",
+          "name": "_decimals",
+          "type": "uint8[2]"
         },
         {
-          "internalType": "uint8",
-          "name": "_baseFeedDecimals",
-          "type": "uint8"
+          "internalType": "uint256[2]",
+          "name": "_validities",
+          "type": "uint256[2]"
         }
       ],
-      "name": "assetExchangeRate",
+      "name": "exchangeRate",
       "outputs": [
         {
           "internalType": "uint256",
