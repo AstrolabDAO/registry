@@ -2098,7 +2098,13 @@
     {
       "inputs": [],
       "name": "collectFees",
-      "outputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2454,6 +2460,11 @@
           "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
         }
       ],
       "name": "previewDeposit",
@@ -2473,6 +2484,11 @@
           "internalType": "uint256",
           "name": "_shares",
           "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
         }
       ],
       "name": "previewMint",
@@ -2492,6 +2508,11 @@
           "internalType": "uint256",
           "name": "_shares",
           "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
         }
       ],
       "name": "previewRedeem",
@@ -2511,6 +2532,11 @@
           "internalType": "uint256",
           "name": "_assets",
           "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
         }
       ],
       "name": "previewWithdraw",
