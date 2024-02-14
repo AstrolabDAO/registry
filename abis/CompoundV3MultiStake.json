@@ -690,6 +690,25 @@
       "type": "function"
     },
     {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "cTokens",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "name": "claimRewards",
       "outputs": [
@@ -1768,7 +1787,12 @@
       "inputs": [
         {
           "internalType": "address[]",
-          "name": "_inputs",
+          "name": "_newInputs",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_cTokens",
           "type": "address[]"
         },
         {
@@ -1778,7 +1802,7 @@
         },
         {
           "internalType": "address[]",
-          "name": "_feeds",
+          "name": "_priceFeeds",
           "type": "address[]"
         },
         {
