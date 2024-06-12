@@ -4,12 +4,7 @@ pragma solidity ^0.8.0;
 
 interface IBridgeConnectorHome {
     // Events
-    event BridgeSuccess(
-        uint256 indexed amount,
-        uint256 indexed chainId,
-        uint256 fees,
-        address indexed destination
-    );
+    event BridgeSuccess(uint256 indexed amount, uint256 indexed chainId, uint256 fees, address indexed destination);
 
     event RequestReceived(uint256 indexed chainId, uint256 amount);
 
@@ -19,23 +14,13 @@ interface IBridgeConnectorHome {
 
     // Functions
     function updateCrate(uint256 _chainId) external;
-    function bridgeFunds(
-        uint256 _amount,
-        uint256 _chainId,
-        uint256 _minAmount,
-        bytes calldata _bridgeData
-    ) external payable;
+    function bridgeFunds(uint256 _amount, uint256 _chainId, uint256 _minAmount, bytes calldata _bridgeData)
+        external
+        payable;
     function returnTokens() external;
-    function addChain(
-        uint256 _chainId,
-        address _allocator,
-        address _remoteConnector,
-        bytes calldata _params
-    ) external;
-    function estimateBridgeCost(
-        uint256 _chainId,
-        uint256 _amount
-    ) external view returns (uint256 gasEstimation);
+    function addChain(uint256 _chainId, address _allocator, address _remoteConnector, bytes calldata _params)
+        external;
+    function estimateBridgeCost(uint256 _chainId, uint256 _amount) external view returns (uint256 gasEstimation);
     function recoverNative() external;
 
     // View/Pure functions

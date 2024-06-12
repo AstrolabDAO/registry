@@ -1,33 +1,41 @@
 {
   "abi": [
     {
-      "inputs": [],
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_accessController",
+          "type": "address"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "constructor"
     },
     {
-      "inputs": [],
-      "name": "AcceptanceExpired",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        }
+      ],
+      "name": "AddressEmptyCode",
       "type": "error"
     },
     {
-      "inputs": [],
-      "name": "AcceptanceLocked",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "AddressInsufficientBalance",
       "type": "error"
     },
     {
       "inputs": [],
       "name": "AddressZero",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "AllowanceOverflow",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "AllowanceUnderflow",
       "type": "error"
     },
     {
@@ -53,99 +61,55 @@
       "type": "error"
     },
     {
+      "inputs": [],
+      "name": "ContractNonCompliant",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EnforcedPause",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ExpectedPause",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FailedDelegateCall",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FailedInnerCall",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidData",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "MissingOracle",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ReentrancyGuardReentrantCall",
+      "type": "error"
+    },
+    {
       "inputs": [
         {
           "internalType": "address",
-          "name": "borrower",
+          "name": "token",
           "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
         }
       ],
-      "name": "FlashLoanDefault",
+      "name": "SafeERC20FailedOperation",
       "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InsufficientAllowance",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InsufficientBalance",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidCalldata",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidPermit",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "PermitExpired",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "TotalSupplyOverflow",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Unauthorized",
-      "type": "error"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "Approval",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "timestamp",
-          "type": "uint256"
-        }
-      ],
-      "name": "Compound",
-      "type": "event"
     },
     {
       "anonymous": false,
@@ -184,23 +148,66 @@
         {
           "indexed": true,
           "internalType": "address",
-          "name": "borrower",
+          "name": "receiver",
           "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "assets",
+          "type": "uint256"
+        }
+      ],
+      "name": "DepositRequest",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
         },
         {
           "indexed": false,
           "internalType": "uint256",
           "name": "amount",
           "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "fee",
-          "type": "uint256"
         }
       ],
-      "name": "FlashLoan",
+      "name": "DepositRequestCanceled",
       "type": "event"
     },
     {
@@ -285,13 +292,7 @@
         {
           "indexed": true,
           "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "operator",
+          "name": "receiver",
           "type": "address"
         },
         {
@@ -301,9 +302,21 @@
           "type": "address"
         },
         {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
           "indexed": false,
           "internalType": "uint256",
-          "name": "assets",
+          "name": "shares",
           "type": "uint256"
         }
       ],
@@ -316,117 +329,29 @@
         {
           "indexed": true,
           "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
           "name": "owner",
           "type": "address"
         },
         {
           "indexed": false,
           "internalType": "uint256",
-          "name": "assets",
+          "name": "requestId",
           "type": "uint256"
-        }
-      ],
-      "name": "RedeemRequestCanceled",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "previousAdminRole",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "newAdminRole",
-          "type": "bytes32"
-        }
-      ],
-      "name": "RoleAdminChanged",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "RoleGranted",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "RoleRevoked",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
         },
         {
           "indexed": false,
           "internalType": "uint256",
-          "name": "amount",
+          "name": "shares",
           "type": "uint256"
         }
       ],
-      "name": "Transfer",
+      "name": "RedeemRequestCanceled",
       "type": "event"
     },
     {
@@ -485,12 +410,12 @@
     },
     {
       "inputs": [],
-      "name": "DEFAULT_ADMIN_ROLE",
+      "name": "RESCUE_TIMELOCK",
       "outputs": [
         {
-          "internalType": "bytes32",
+          "internalType": "uint64",
           "name": "",
-          "type": "bytes32"
+          "type": "uint64"
         }
       ],
       "stateMutability": "view",
@@ -498,54 +423,15 @@
     },
     {
       "inputs": [],
-      "name": "DOMAIN_SEPARATOR",
+      "name": "RESCUE_VALIDITY",
       "outputs": [
         {
-          "internalType": "bytes32",
-          "name": "result",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "KEEPER_ROLE",
-      "outputs": [
-        {
-          "internalType": "bytes32",
+          "internalType": "uint64",
           "name": "",
-          "type": "bytes32"
+          "type": "uint64"
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "MANAGER_ROLE",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        }
-      ],
-      "name": "acceptRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -562,54 +448,6 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        }
-      ],
-      "name": "allowance",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "result",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "approve",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "name": "asset",
       "outputs": [
@@ -617,76 +455,6 @@
           "internalType": "contract IERC20Metadata",
           "name": "",
           "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint8",
-          "name": "_index",
-          "type": "uint8"
-        }
-      ],
-      "name": "assetExchangeRate",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_owner",
-          "type": "address"
-        }
-      ],
-      "name": "assetsOf",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "available",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        }
-      ],
-      "name": "balanceOf",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "result",
-          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -707,7 +475,7 @@
     },
     {
       "inputs": [],
-      "name": "claimableAssetFees",
+      "name": "claimableTransactionFees",
       "outputs": [
         {
           "internalType": "uint256",
@@ -727,7 +495,12 @@
         },
         {
           "internalType": "bytes[]",
-          "name": "_params",
+          "name": "_harvestParams",
+          "type": "bytes[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "_investParams",
           "type": "bytes[]"
         }
       ],
@@ -735,54 +508,16 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "iouReceived",
+          "name": "totalHarvested",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "harvestedRewards",
+          "name": "totalInvested",
           "type": "uint256"
         }
       ],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_shares",
-          "type": "uint256"
-        }
-      ],
-      "name": "convertToAssets",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_assets",
-          "type": "uint256"
-        }
-      ],
-      "name": "convertToShares",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -864,88 +599,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "getKeepers",
-      "outputs": [
-        {
-          "internalType": "address[]",
-          "name": "",
-          "type": "address[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getManagers",
-      "outputs": [
-        {
-          "internalType": "address[]",
-          "name": "",
-          "type": "address[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        }
-      ],
-      "name": "getMembers",
-      "outputs": [
-        {
-          "internalType": "address[]",
-          "name": "",
-          "type": "address[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        }
-      ],
-      "name": "getRoleAdmin",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "grantRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "bytes[]",
@@ -957,35 +610,11 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "amount",
+          "name": "",
           "type": "uint256"
         }
       ],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "hasRole",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -1053,6 +682,11 @@
                   "internalType": "address",
                   "name": "agent",
                   "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "oracle",
+                  "type": "address"
                 }
               ],
               "internalType": "struct CoreAddresses",
@@ -1103,46 +737,22 @@
             },
             {
               "internalType": "address[]",
+              "name": "lpTokens",
+              "type": "address[]"
+            },
+            {
+              "internalType": "address[]",
               "name": "rewardTokens",
               "type": "address[]"
-            }
-          ],
-          "internalType": "struct StrategyBaseParams",
-          "name": "_baseParams",
-          "type": "tuple"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "assetPriceFeed",
-              "type": "address"
             },
             {
-              "internalType": "address[]",
-              "name": "inputPriceFeeds",
-              "type": "address[]"
+              "internalType": "bytes",
+              "name": "extension",
+              "type": "bytes"
             }
           ],
-          "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
-          "name": "_chainlinkParams",
-          "type": "tuple"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address[]",
-              "name": "cTokens",
-              "type": "address[]"
-            },
-            {
-              "internalType": "address",
-              "name": "cometRewards",
-              "type": "address"
-            }
-          ],
-          "internalType": "struct CompoundV3MultiStake.Params",
-          "name": "_compoundParams",
+          "internalType": "struct StrategyParams",
+          "name": "_params",
           "type": "tuple"
         }
       ],
@@ -1219,12 +829,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "investedAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "iouReceived",
+          "name": "totalInvested",
           "type": "uint256"
         }
       ],
@@ -1234,9 +839,9 @@
     {
       "inputs": [
         {
-          "internalType": "uint8",
+          "internalType": "uint256",
           "name": "_index",
-          "type": "uint8"
+          "type": "uint256"
         }
       ],
       "name": "invested",
@@ -1266,55 +871,17 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "_account",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "_index",
+          "type": "uint256"
         }
       ],
-      "name": "isAdmin",
+      "name": "investedInput",
       "outputs": [
         {
-          "internalType": "bool",
+          "internalType": "uint256",
           "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_account",
-          "type": "address"
-        }
-      ],
-      "name": "isKeeper",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_account",
-          "type": "address"
-        }
-      ],
-      "name": "isManager",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -1327,6 +894,11 @@
         {
           "internalType": "uint64",
           "name": "feeCollection",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "liquidateRequest",
           "type": "uint64"
         },
         {
@@ -1400,7 +972,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "liquidityAvailable",
+          "name": "totalRecovered",
           "type": "uint256"
         }
       ],
@@ -1427,13 +999,19 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "maxLoan",
-      "outputs": [
+      "inputs": [
         {
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
+        }
+      ],
+      "name": "lpTokens",
+      "outputs": [
+        {
+          "internalType": "contract IERC20Metadata",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -1479,22 +1057,23 @@
       "type": "function"
     },
     {
-      "inputs": [
+      "inputs": [],
+      "name": "orcale",
+      "outputs": [
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "",
           "type": "address"
         }
       ],
-      "name": "nonces",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "result",
-          "type": "uint256"
-        }
-      ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -1513,78 +1092,6 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "pendingAcceptance",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "replacing",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "timestamp",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "value",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "deadline",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint8",
-          "name": "v",
-          "type": "uint8"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "r",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "s",
-          "type": "bytes32"
-        }
-      ],
-      "name": "permit",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
@@ -1598,7 +1105,7 @@
           "type": "uint256[8]"
         }
       ],
-      "stateMutability": "view",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -1617,36 +1124,18 @@
           "type": "uint256[8]"
         }
       ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "proxyType",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "pure",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "inputs": [
         {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
           "internalType": "address",
-          "name": "caller",
+          "name": "_token",
           "type": "address"
         }
       ],
-      "name": "renounceRole",
+      "name": "requestRescue",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -1654,17 +1143,12 @@
     {
       "inputs": [
         {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
           "internalType": "address",
-          "name": "account",
+          "name": "_token",
           "type": "address"
         }
       ],
-      "name": "revokeRole",
+      "name": "rescue",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -1704,39 +1188,9 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "_account",
-          "type": "address"
-        },
-        {
-          "internalType": "bool",
-          "name": "_isExempt",
-          "type": "bool"
-        }
-      ],
-      "name": "setExemption",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "components": [
-            {
-              "internalType": "address[]",
-              "name": "cTokens",
-              "type": "address[]"
-            },
-            {
-              "internalType": "address",
-              "name": "cometRewards",
-              "type": "address"
-            }
-          ],
-          "internalType": "struct CompoundV3MultiStake.Params",
+          "internalType": "bytes",
           "name": "_params",
-          "type": "tuple"
+          "type": "bytes"
         }
       ],
       "name": "setParams",
@@ -1745,23 +1199,10 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "sharePrice",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "bytes4",
-          "name": "interfaceId",
+          "name": "_interfaceId",
           "type": "bytes4"
         }
       ],
@@ -1773,7 +1214,7 @@
           "type": "bool"
         }
       ],
-      "stateMutability": "view",
+      "stateMutability": "pure",
       "type": "function"
     },
     {
@@ -1804,132 +1245,8 @@
     },
     {
       "inputs": [],
-      "name": "totalAccountedAssets",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "totalAccountedSupply",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "totalAssets",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "totalPendingAssetRequest",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "totalPendingRedemptionRequest",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "totalSupply",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "result",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "transfer",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "transferFrom",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
+      "name": "unpause",
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -1959,9 +1276,9 @@
           "type": "bytes"
         },
         {
-          "internalType": "address",
-          "name": "_priceFeed",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "_exchangeRateBp",
+          "type": "uint256"
         }
       ],
       "name": "updateAsset",
@@ -1972,44 +1289,128 @@
     {
       "inputs": [
         {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "assetPriceFeed",
-              "type": "address"
-            },
-            {
-              "internalType": "address[]",
-              "name": "inputPriceFeeds",
-              "type": "address[]"
-            }
-          ],
-          "internalType": "struct StrategyV5Chainlink.ChainlinkParams",
-          "name": "_chainlinkParams",
-          "type": "tuple"
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_swapData",
+          "type": "bytes"
         }
       ],
-      "name": "updateChainlink",
+      "name": "updateAsset",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "wgas",
-      "outputs": [
+      "inputs": [
         {
-          "internalType": "contract IWETH9",
-          "name": "",
+          "internalType": "address",
+          "name": "_oracle",
           "type": "address"
         }
       ],
-      "stateMutability": "view",
+      "name": "updateOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "stateMutability": "payable",
       "type": "receive"
+    },
+    {
+      "inputs": [],
+      "name": "AllowanceOverflow",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "AllowanceUnderflow",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FlashLoanCallbackFailed",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "borrower",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "FlashLoanDefault",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InsufficientAllowance",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InsufficientBalance",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidInitStatus",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidPermit",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PermitExpired",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "TotalSupplyOverflow",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Unauthorized",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
     },
     {
       "anonymous": false,
@@ -2041,7 +1442,7 @@
         {
           "indexed": false,
           "internalType": "uint256",
-          "name": "feesAmount",
+          "name": "totalFees",
           "type": "uint256"
         },
         {
@@ -2055,15 +1456,203 @@
       "type": "event"
     },
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "borrower",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "FlashLoan",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DOMAIN_SEPARATOR",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "result",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "owner",
           "type": "address"
         },
         {
           "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "result",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "assetsOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "available",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "availableClaimable",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
           "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "result",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "borrowable",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
           "type": "address"
         }
       ],
@@ -2074,8 +1663,185 @@
     },
     {
       "inputs": [],
+      "name": "claimableFlashFees",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "claimableRedeemRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "claimableRedeemRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "collectFees",
-      "outputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        }
+      ],
+      "name": "convertToAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_roundUp",
+          "type": "bool"
+        }
+      ],
+      "name": "convertToAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_roundUp",
+          "type": "bool"
+        }
+      ],
+      "name": "convertToShares",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "convertToShares",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "shares",
+          "type": "uint256"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2106,140 +1872,107 @@
     {
       "inputs": [
         {
-          "internalType": "contract IFlashLoanReceiver",
-          "name": "receiver",
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_borrower",
           "type": "address"
         },
         {
           "internalType": "uint256",
-          "name": "amount",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "flashFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "flashFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
           "type": "uint256"
         },
         {
           "internalType": "bytes",
-          "name": "params",
+          "name": "_data",
           "type": "bytes"
         }
       ],
-      "name": "flashLoanSimple",
-      "outputs": [],
+      "name": "flashLoan",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "inputs": [
         {
-          "components": [
-            {
-              "components": [
-                {
-                  "internalType": "string",
-                  "name": "name",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "symbol",
-                  "type": "string"
-                },
-                {
-                  "internalType": "uint8",
-                  "name": "decimals",
-                  "type": "uint8"
-                }
-              ],
-              "internalType": "struct Erc20Metadata",
-              "name": "erc20Metadata",
-              "type": "tuple"
-            },
-            {
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "wgas",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "asset",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "feeCollector",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "swapper",
-                  "type": "address"
-                },
-                {
-                  "internalType": "address",
-                  "name": "agent",
-                  "type": "address"
-                }
-              ],
-              "internalType": "struct CoreAddresses",
-              "name": "coreAddresses",
-              "type": "tuple"
-            },
-            {
-              "components": [
-                {
-                  "internalType": "uint64",
-                  "name": "perf",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "mgmt",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "entry",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "exit",
-                  "type": "uint64"
-                },
-                {
-                  "internalType": "uint64",
-                  "name": "flash",
-                  "type": "uint64"
-                }
-              ],
-              "internalType": "struct Fees",
-              "name": "fees",
-              "type": "tuple"
-            },
-            {
-              "internalType": "address[]",
-              "name": "inputs",
-              "type": "address[]"
-            },
-            {
-              "internalType": "uint16[]",
-              "name": "inputWeights",
-              "type": "uint16[]"
-            },
-            {
-              "internalType": "address[]",
-              "name": "rewardTokens",
-              "type": "address[]"
-            }
-          ],
-          "internalType": "struct StrategyBaseParams",
-          "name": "_params",
-          "type": "tuple"
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
         }
       ],
-      "name": "init",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "name": "isLendable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -2270,6 +2003,25 @@
         }
       ],
       "name": "maxDeposit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "maxFlashLoan",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2326,25 +2078,6 @@
           "type": "address"
         }
       ],
-      "name": "maxRedemptionClaim",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_owner",
-          "type": "address"
-        }
-      ],
       "name": "maxWithdraw",
       "outputs": [
         {
@@ -2373,7 +2106,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "assets",
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -2381,9 +2114,31 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "pause",
-      "outputs": [],
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "mint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2391,11 +2146,30 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "owner",
           "type": "address"
         }
       ],
-      "name": "pendingAssetRequest",
+      "name": "nonces",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "result",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "pendingRedeemRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2410,11 +2184,107 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
           "type": "address"
         }
       ],
       "name": "pendingRedeemRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "pendingWithdrawRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deadline",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "v",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "s",
+          "type": "bytes32"
+        }
+      ],
+      "name": "permit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        }
+      ],
+      "name": "previewDeposit",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2437,7 +2307,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "shares",
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -2453,6 +2323,54 @@
         }
       ],
       "name": "previewMint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        }
+      ],
+      "name": "previewMint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "previewRedeem",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2486,7 +2404,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_assets",
+          "name": "_amount",
           "type": "uint256"
         }
       ],
@@ -2499,6 +2417,43 @@
         }
       ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "previewWithdraw",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxyType",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
       "type": "function"
     },
     {
@@ -2523,7 +2478,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "assets",
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -2534,35 +2489,33 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "shares",
+          "name": "_shares",
           "type": "uint256"
         },
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_receiver",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
         }
       ],
       "name": "requestRedeem",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
+      "outputs": [
         {
-          "internalType": "address",
-          "name": "_token",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
         }
       ],
-      "name": "requestRescue",
-      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2575,30 +2528,28 @@
         },
         {
           "internalType": "address",
-          "name": "operator",
+          "name": "_receiver",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
         }
       ],
       "name": "requestWithdraw",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
+      "outputs": [
         {
-          "internalType": "address",
-          "name": "_token",
-          "type": "address"
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
-      "name": "rescue",
-      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2640,6 +2591,35 @@
         },
         {
           "internalType": "uint256",
+          "name": "_maxAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        }
+      ],
+      "name": "safeMint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "deposited",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
           "name": "_minAmountOut",
           "type": "uint256"
         },
@@ -2658,7 +2638,7 @@
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "assets",
+          "name": "amount",
           "type": "uint256"
         }
       ],
@@ -2721,6 +2701,24 @@
       "inputs": [
         {
           "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isExempt",
+          "type": "bool"
+        }
+      ],
+      "name": "setExemption",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
           "name": "_feeCollector",
           "type": "address"
         }
@@ -2773,6 +2771,19 @@
     {
       "inputs": [
         {
+          "internalType": "uint16[]",
+          "name": "_weights",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "setInputWeights",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address[]",
           "name": "_inputs",
           "type": "address[]"
@@ -2781,6 +2792,11 @@
           "internalType": "uint16[]",
           "name": "_weights",
           "type": "uint16[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_lpTokens",
+          "type": "address[]"
         }
       ],
       "name": "setInputs",
@@ -2792,7 +2808,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_maxLoan",
+          "name": "_amount",
           "type": "uint256"
         }
       ],
@@ -2805,7 +2821,7 @@
       "inputs": [
         {
           "internalType": "uint16",
-          "name": "_slippageBps",
+          "name": "_bps",
           "type": "uint16"
         }
       ],
@@ -2831,7 +2847,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_minLiquidity",
+          "name": "_amount",
           "type": "uint256"
         }
       ],
@@ -2844,7 +2860,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_profitCooldown",
+          "name": "_cooldown",
           "type": "uint256"
         }
       ],
@@ -2857,7 +2873,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_redemptionLocktime",
+          "name": "_locktime",
           "type": "uint256"
         }
       ],
@@ -2885,6 +2901,21 @@
           "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_inputs",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "_rewards",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "_asset",
+          "type": "bool"
         }
       ],
       "name": "setSwapperAllowance",
@@ -2894,7 +2925,85 @@
     },
     {
       "inputs": [],
+      "name": "sharePrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAccountedAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAccountedSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "totalClaimableRedemption",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalPendingRedemptionRequest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalPendingWithdrawRequest",
       "outputs": [
         {
           "internalType": "uint256",
@@ -2920,8 +3029,38 @@
     },
     {
       "inputs": [],
-      "name": "unpause",
-      "outputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "result",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -2929,17 +3068,28 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "_asset",
+          "name": "_owner",
           "type": "address"
         },
         {
-          "internalType": "bytes",
-          "name": "_swapData",
-          "type": "bytes"
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
         }
       ],
-      "name": "updateAsset",
-      "outputs": [],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "function"
     },

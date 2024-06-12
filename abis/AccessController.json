@@ -1,6 +1,17 @@
 {
   "abi": [
     {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_admin",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "inputs": [],
       "name": "AcceptanceExpired",
       "type": "error"
@@ -11,22 +22,25 @@
       "type": "error"
     },
     {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "OutOfBounds",
+      "type": "error"
+    },
+    {
       "inputs": [],
       "name": "Unauthorized",
       "type": "error"
     },
     {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "Paused",
-      "type": "event"
+      "inputs": [],
+      "name": "ValueOutOfCastRange",
+      "type": "error"
     },
     {
       "anonymous": false,
@@ -104,26 +118,13 @@
       "type": "event"
     },
     {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "Unpaused",
-      "type": "event"
-    },
-    {
       "inputs": [],
-      "name": "DEFAULT_ADMIN_ROLE",
+      "name": "ROLE_ACCEPTANCE_TIMELOCK",
       "outputs": [
         {
-          "internalType": "bytes32",
+          "internalType": "uint256",
           "name": "",
-          "type": "bytes32"
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -131,25 +132,12 @@
     },
     {
       "inputs": [],
-      "name": "KEEPER_ROLE",
+      "name": "ROLE_ACCEPTANCE_VALIDITY",
       "outputs": [
         {
-          "internalType": "bytes32",
+          "internalType": "uint256",
           "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "MANAGER_ROLE",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -159,13 +147,79 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "role",
+          "name": "_role",
           "type": "bytes32"
         }
       ],
       "name": "acceptRole",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        }
+      ],
+      "name": "checkRole",
+      "outputs": [],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "checkRole",
+      "outputs": [],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "role",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "replacing",
+              "type": "address"
+            },
+            {
+              "internalType": "uint64",
+              "name": "timestamp",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct AccessController.PendingAcceptance",
+          "name": "_acceptance",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "checkRoleAcceptance",
+      "outputs": [],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -198,7 +252,7 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "role",
+          "name": "_role",
           "type": "bytes32"
         }
       ],
@@ -217,7 +271,7 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "role",
+          "name": "_role",
           "type": "bytes32"
         }
       ],
@@ -236,12 +290,12 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "role",
+          "name": "_role",
           "type": "bytes32"
         },
         {
           "internalType": "address",
-          "name": "account",
+          "name": "_account",
           "type": "address"
         }
       ],
@@ -254,7 +308,7 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "role",
+          "name": "_role",
           "type": "bytes32"
         },
         {
@@ -332,19 +386,6 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "paused",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [
         {
           "internalType": "address",
@@ -365,9 +406,9 @@
           "type": "address"
         },
         {
-          "internalType": "uint256",
+          "internalType": "uint64",
           "name": "timestamp",
-          "type": "uint256"
+          "type": "uint64"
         }
       ],
       "stateMutability": "view",
@@ -377,13 +418,8 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "role",
+          "name": "_role",
           "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
         }
       ],
       "name": "renounceRole",
@@ -395,12 +431,12 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "role",
+          "name": "_role",
           "type": "bytes32"
         },
         {
           "internalType": "address",
-          "name": "account",
+          "name": "_account",
           "type": "address"
         }
       ],

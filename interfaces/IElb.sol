@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-interface ISwap {
+interface IElb {
     // Events
     event RampA(uint256 oldA, uint256 newA, uint256 initialTime, uint256 futureTime);
     event StopRampA(uint256 currentA, uint256 time);
@@ -35,7 +35,9 @@ interface ISwap {
     function getVirtualLpBalance() external view returns (uint256);
 
     // State modifying functions
-    function swapVirtualToAsset(uint256 _dx, uint256 _minDy, uint256 _deadline, address _receiver) external returns (uint256 dy);
+    function swapVirtualToAsset(uint256 _dx, uint256 _minDy, uint256 _deadline, address _receiver)
+        external
+        returns (uint256 dy);
     function swapAssetToVirtual(uint256 _dx, uint256 _deadline) external returns (uint256);
     function addLiquidity(uint256 amount, uint256 deadline) external returns (uint256);
     function removeLiquidity(uint256 amount, uint256 deadline) external returns (uint256 recovered);

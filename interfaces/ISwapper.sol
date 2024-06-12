@@ -14,12 +14,9 @@ interface ISwapper {
         bytes calldata _callData
     ) external payable returns (uint256 received, uint256 spent);
 
-    function decodeAndSwap(
-        address _input,
-        address _output,
-        uint256 _amount,
-        bytes calldata _params
-    ) external returns (uint256 received, uint256 spent);
+    function decodeAndSwap(address _input, address _output, uint256 _amount, bytes calldata _params)
+        external
+        returns (uint256 received, uint256 spent);
 
     function multiSwap(
         address[] calldata _inputs,

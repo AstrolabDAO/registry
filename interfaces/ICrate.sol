@@ -4,10 +4,19 @@ pragma solidity ^0.8.17;
 interface ICrate {
     // Events
     event Deposit(address indexed sender, address indexed owner, uint256 assets, uint256 shares);
-    event Withdraw(address indexed sender, address indexed receiver, address indexed owner, uint256 assets, uint256 shares);
+    event Withdraw(
+        address indexed sender, address indexed receiver, address indexed owner, uint256 assets, uint256 shares
+    );
     event ChainDebtUpdated(uint256 newChainDebt, uint256 oldChainDebt, uint256 chainId);
     event SharePriceUpdated(uint256 shareprice, uint256 timestamp);
-    event TakeFees(uint256 gain, uint256 totalAssets, uint256 managementFee, uint256 performanceFee, uint256 sharesMinted, address indexed receiver);
+    event TakeFees(
+        uint256 gain,
+        uint256 totalAssets,
+        uint256 managementFee,
+        uint256 performanceFee,
+        uint256 sharesMinted,
+        address indexed receiver
+    );
     event NewFees(uint256 performance, uint256 management, uint256 withdraw);
     event LiquidityRebalanced(uint256 recovered, uint256 earned);
     event PoolMigrated(address indexed newPool, uint256 seedAmount);
@@ -19,15 +28,27 @@ interface ICrate {
     event MaxTotalAssetsSet(uint256 maxTotalAssets);
 
     // Functions
-    function safeDeposit(uint256 _amount, address _receiver, uint256 _minShareAmount, uint256 _deadline) external returns (uint256 shares);
+    function safeDeposit(uint256 _amount, address _receiver, uint256 _minShareAmount, uint256 _deadline)
+        external
+        returns (uint256 shares);
     function deposit(uint256 _amount, address _receiver) external returns (uint256 shares);
     function mint(uint256 _shares, address _receiver) external returns (uint256 assets);
     function withdraw(uint256 _amount, address _receiver, address _owner) external returns (uint256 shares);
-    function safeWithdraw(uint256 _amount, uint256 _minAmount, uint256 _deadline, address _receiver, address _owner) external returns (uint256 shares);
+    function safeWithdraw(uint256 _amount, uint256 _minAmount, uint256 _deadline, address _receiver, address _owner)
+        external
+        returns (uint256 shares);
     function redeem(uint256 _shares, address _receiver, address _owner) external returns (uint256 assets);
-    function safeRedeem(uint256 _shares, uint256 _minAmountOut, uint256 _deadline, address _receiver, address _owner) external returns (uint256 assets);
+    function safeRedeem(uint256 _shares, uint256 _minAmountOut, uint256 _deadline, address _receiver, address _owner)
+        external
+        returns (uint256 assets);
     function rebalanceLiquidityPool() external returns (uint256 earned);
-    function dispatchAssets(uint256[] calldata _amounts, uint256[] calldata _minAmounts, uint256[] calldata _chainIds, uint256[] calldata _msgValues, bytes[] calldata _bridgeData) external payable;
+    function dispatchAssets(
+        uint256[] calldata _amounts,
+        uint256[] calldata _minAmounts,
+        uint256[] calldata _chainIds,
+        uint256[] calldata _msgValues,
+        bytes[] calldata _bridgeData
+    ) external payable;
     function migrateLiquidityPool(address _newPool, uint256 _seedAmount) external;
     function increaseLiquidity(uint256 _liquidityAdded) external;
     function decreaseLiquidity(uint256 _liquidityRemoved) external;
@@ -48,8 +69,18 @@ interface ICrate {
     function maxWithdraw(address _owner) external view returns (uint256);
     function maxRedeem(address _owner) external view returns (uint256);
     function takeFees() external;
-    function computeFees() external view returns (uint256 performanceFeeAmount, uint256 managementFeeAmount, uint256 gain);
-    function addChain(uint256 _chainId, uint256 _maxDeposit, address _bridgeAddress, address _allocator, address _remoteConnector, bytes calldata _params) external;
+    function computeFees()
+        external
+        view
+        returns (uint256 performanceFeeAmount, uint256 managementFeeAmount, uint256 gain);
+    function addChain(
+        uint256 _chainId,
+        uint256 _maxDeposit,
+        address _bridgeAddress,
+        address _allocator,
+        address _remoteConnector,
+        bytes calldata _params
+    ) external;
     function enableLiquidityPool(bool _liquidityPoolEnabled) external;
     function setMaxDepositForChain(uint256 _maxDeposit, uint256 _chainId) external;
     function setMaxTotalAssets(uint256 _amount) external;
@@ -58,7 +89,10 @@ interface ICrate {
     function unpause() external;
     function snapshot() external returns (uint256 id);
     function rescueToken(address _token, bool _onlyETH) external;
-    function estimateDispatchCost(uint256[] calldata _chainIds, uint256[] calldata _amounts) external view returns (uint256[] memory nativeCost);
+    function estimateDispatchCost(uint256[] calldata _chainIds, uint256[] calldata _amounts)
+        external
+        view
+        returns (uint256[] memory nativeCost);
 
     // Public State Variables
     function maxTotalAssets() external view returns (uint256);

@@ -21,10 +21,8 @@
     "*"
   ],
   "devDependencies": {
+    "prettier": "^3.3.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "@astrolabs/registry": "^1.0.19"
   }
 }

@@ -1,60 +1,79 @@
 {
   "abi": [
     {
-      "inputs": [
-        {
-          "components": [
-            {
-              "internalType": "uint64",
-              "name": "perf",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "mgmt",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "entry",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "exit",
-              "type": "uint64"
-            },
-            {
-              "internalType": "uint64",
-              "name": "flash",
-              "type": "uint64"
-            }
-          ],
-          "internalType": "struct Fees",
-          "name": "_fees",
-          "type": "tuple"
-        }
-      ],
-      "name": "checkFees",
+      "inputs": [],
+      "name": "MAX_ENTRY_FEE",
       "outputs": [
         {
-          "internalType": "bool",
+          "internalType": "uint256",
           "name": "",
-          "type": "bool"
+          "type": "uint256"
         }
       ],
-      "stateMutability": "pure",
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_EXIT_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_FLASH_LOAN_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_MGMT_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_PERF_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
         {
-          "internalType": "contract IAs4626",
-          "name": "self",
-          "type": "IAs4626"
+          "internalType": "contract IStrategyV5",
+          "name": "strat",
+          "type": "IStrategyV5"
         }
       ],
-      "name": "computeFees",
+      "name": "claimableDynamicFees",
       "outputs": [
         {
           "internalType": "uint256",
@@ -73,7 +92,7 @@
         },
         {
           "internalType": "uint256",
-          "name": "feesAmount",
+          "name": "totalFees",
           "type": "uint256"
         }
       ],
@@ -84,17 +103,17 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "lastHarvest",
+          "name": "_lastHarvest",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "expectedProfits",
+          "name": "_expectedProfits",
           "type": "uint256"
         },
         {
           "internalType": "uint256",
-          "name": "profitCooldown",
+          "name": "_profitCooldown",
           "type": "uint256"
         }
       ],

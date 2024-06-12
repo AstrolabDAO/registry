@@ -3,7 +3,6 @@
 pragma solidity ^0.8.17;
 
 interface IAllocator {
-
     // Events
     event Withdraw(uint256 request, uint256 recovered, address receiver);
     event ChainDebtUpdate(uint256 newDebt);
@@ -39,13 +38,10 @@ interface IAllocator {
 
     // View functions to be included if they are part of the public interface
     function strategiesList(uint256 index) external view returns (address);
-    function strategiesData(address) external view returns (
-        string memory strategyName,
-        bool whitelisted,
-        bool panicked,
-        uint256 maxDeposit,
-        uint256 debt
-    );
+    function strategiesData(address)
+        external
+        view
+        returns (string memory strategyName, bool whitelisted, bool panicked, uint256 maxDeposit, uint256 debt);
     function bridgeConnector() external view returns (address);
     function crateChainId() external view returns (uint256);
     function asset() external view returns (address);

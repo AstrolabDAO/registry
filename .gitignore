@@ -17,6 +17,7 @@ pids
 .env.bench
 .env.prod
 .env.production
+.foundry.toml
 
 # Translations
 *.mo
