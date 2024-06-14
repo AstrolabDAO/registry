@@ -46,6 +46,7 @@ pids
 .env.production
 
 # build / packaging
+index.html
 env/
 build/
 develop-eggs/
