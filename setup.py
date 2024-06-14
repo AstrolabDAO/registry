@@ -18,4 +18,4 @@ def save_code_as_module(name):
 mods = {d: save_code_as_module(d) for d in deps}
 
 if __name__ == "__main__":
-  indexed = web_indexer.generate_index_files(root=Path.cwd(), git_root="", template_path=f"{cdn}/libs/{index}") # type: ignore
+  indexed = web_indexer.generate_index_files(root=Path.cwd() / "registry", git_root="", template_path=f"{cdn}/libs/{index}") # type: ignore
