@@ -1,23 +1,21 @@
-import os
 from pathlib import Path
 import types
 import requests
 
-index, cdn = "index_tpl.html", "https://cdn.astrolab.fi"
-deps = ["web_indexer"]
-code = [requests.get(f"{cdn}/libs/{d}.py").text for d in deps]
+index, cdn, deps = "index_tpl.html", "https://cdn.astrolab.fi", ["web_indexer"]
 
-with open(index, "w") as f:
-  f.write(requests.get(f"{cdn}/libs/{index}").text)
+def get_as_utf8(url):
+  r = requests.get(url); r.encoding = "utf-8"
+  return r.text
 
-def save_code_as_module(code, name):
+def save_code_as_module(name):
   mod = types.ModuleType(name) # new module
-  exec(code, mod.__dict__) # load code into it
   mod.__dict__.update({ "__name__": name, "__file__": __file__ }) # inject context
+  exec(get_as_utf8(f"{cdn}/libs/{name}.py"), mod.__dict__) # load code into it
   globals()[name] = mod # expose it
+  return mod
 
-mods = {d: save_code_as_module(c, d) for d, c in zip(deps, code)}
+mods = {d: save_code_as_module(d) for d in deps}
 
 if __name__ == "__main__":
-  indexed = web_indexer.generate_index_files(Path.cwd())
-  os.remove(index)
+  indexed = web_indexer.generate_index_files(root=Path.cwd(), git_root="", template_path=f"{cdn}/libs/{index}") # type: ignore

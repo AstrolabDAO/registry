@@ -1,4 +1,4 @@
 #!/bin/bash
 pip install -r requirements.txt
+find . -depth 1 -type f | grep -v -E "(abis|interfaces|deployments|setup)" | xargs rm -rf
 python setup.py
-find . | grep -v -E "(abis|interfaces|deployments|index.html)" | xargs rm -rf
