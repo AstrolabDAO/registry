@@ -1,0 +1,24 @@
+{
+  "name": "AccessController-standalone",
+  "units": {
+    "AccessController": {
+      "contract": "AccessController",
+      "address": "0x0000d37c552ef472e408957000683a4fa998aaa0",
+      "chainId": 43114,
+      "slug": "accesscontroller",
+      "local": false,
+      "tx": "0x17147e33da72fa656a010a4bb4afe9cbdedb6efefa43b7f1e93e19b70841854f",
+      "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0",
+      "exported": true,
+      "verified": true,
+      "args": [
+        "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0"
+      ]
+    }
+  },
+  "slug": "accesscontroller-standalone",
+  "verified": true,
+  "exported": true,
+  "local": false,
+  "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0"
+}

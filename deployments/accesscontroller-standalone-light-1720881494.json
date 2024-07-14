@@ -1,0 +1,10 @@
+{
+  "name": "AccessController-standalone",
+  "units": {
+    "AccessController": {
+      "contract": "AccessController",
+      "address": "0x7c7379531b2aee82e4ca06d4175d13b9cbeafd49",
+      "chainId": 137
+    }
+  }
+}
