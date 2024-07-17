@@ -1,0 +1,21 @@
+{
+  "name": "AsAccounting-standalone",
+  "units": {
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0x0000121c5b40b53136e040448e0838b939eaaaa0",
+      "chainId": 534352,
+      "slug": "asaccounting",
+      "local": false,
+      "tx": "0x7533822ba1ea6417d7067c2a233534968964fdfdf760301e7ca11a65eaeba806",
+      "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0",
+      "exported": true,
+      "verified": true
+    }
+  },
+  "slug": "asaccounting-standalone",
+  "verified": true,
+  "exported": true,
+  "local": false,
+  "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "AsAccounting-standalone",
+  "units": {
+    "AsAccounting": {
+      "contract": "AsAccounting",
+      "address": "0xef46d5fe753c988606e6f703260d816af53b03eb",
+      "chainId": 137
+    }
+  }
+}

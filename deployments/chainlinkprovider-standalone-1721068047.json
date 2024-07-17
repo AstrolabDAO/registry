@@ -1,0 +1,23 @@
+{
+  "name": "ChainlinkProvider-standalone",
+  "units": {
+    "ChainlinkProvider": {
+      "contract": "ChainlinkProvider",
+      "address": "0x7c7379531b2aee82e4ca06d4175d13b9cbeafd49",
+      "chainId": 137,
+      "slug": "chainlinkprovider",
+      "local": false,
+      "tx": "0xa8cba1e6a0b54377a0e47fad662eb17333fad5cebdc15fd824ea825510c92077",
+      "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0",
+      "exported": true,
+      "verified": false,
+      "args": [
+        "0x0000d37C552EF472e408957000683a4fa998AAA0"
+      ]
+    }
+  },
+  "slug": "chainlinkprovider-standalone",
+  "exported": true,
+  "local": false,
+  "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0"
+}

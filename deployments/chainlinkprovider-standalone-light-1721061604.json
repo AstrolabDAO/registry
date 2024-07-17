@@ -1,0 +1,10 @@
+{
+  "name": "ChainlinkProvider-standalone",
+  "units": {
+    "ChainlinkProvider": {
+      "contract": "ChainlinkProvider",
+      "address": "0x000045c3fda7965a5a6274c09361c4612c4eaaa0",
+      "chainId": 10
+    }
+  }
+}
