@@ -1,0 +1,10 @@
+{
+  "name": "Swapper-standalone",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0x0000992bd14c1423d58c1eb65c788262b0ccaaa0",
+      "chainId": 5000
+    }
+  }
+}

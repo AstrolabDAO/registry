@@ -1,0 +1,27 @@
+{
+  "name": "Swapper-standalone",
+  "units": {
+    "Swapper": {
+      "contract": "Swapper",
+      "address": "0x0000992bd14c1423d58c1eb65c788262b0ccaaa0",
+      "chainId": 8453,
+      "slug": "swapper",
+      "local": false,
+      "tx": "0xc959c8dd5a66c88b37d66f7537d8119afd2d57c21148640fea34359d75e1b6d2",
+      "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0",
+      "exported": true,
+      "verified": true,
+      "args": [
+        "0x7AE63cbc3eB33Ee13B6E68DbE83019B56658eAc0",
+        false,
+        false,
+        true
+      ]
+    }
+  },
+  "slug": "swapper-standalone",
+  "verified": true,
+  "exported": true,
+  "local": false,
+  "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0"
+}
