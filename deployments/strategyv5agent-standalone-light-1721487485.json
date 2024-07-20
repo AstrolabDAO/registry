@@ -1,0 +1,10 @@
+{
+  "name": "StrategyV5Agent-standalone",
+  "units": {
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0x0000fdbb77efa5d77e6cc53e96b2d39c90b3aaa0",
+      "chainId": 59144
+    }
+  }
+}

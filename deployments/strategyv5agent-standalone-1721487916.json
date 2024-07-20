@@ -1,0 +1,27 @@
+{
+  "name": "StrategyV5Agent-standalone",
+  "units": {
+    "StrategyV5Agent": {
+      "contract": "StrategyV5Agent",
+      "address": "0x0000fdbb77efa5d77e6cc53e96b2d39c90b3aaa0",
+      "chainId": 1284,
+      "slug": "strategyv5agent",
+      "local": false,
+      "tx": "0xe9520244a20bf327707b07ccf1f1ce7fac144ae87c72eb63d8b7bb57d1ddbc13",
+      "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0",
+      "exported": true,
+      "verified": true,
+      "args": [
+        "0x0000d37C552EF472e408957000683a4fa998AAA0"
+      ],
+      "libraries": {
+        "AsAccounting": "0x0000121c5B40b53136E040448e0838b939eaAAA0"
+      }
+    }
+  },
+  "slug": "strategyv5agent-standalone",
+  "verified": true,
+  "exported": true,
+  "local": false,
+  "deployer": "0xbEbA0C3A4296DF22ba02D0e825BC7e8e9f5b16B0"
+}
