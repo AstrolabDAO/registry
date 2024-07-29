@@ -112,6 +112,11 @@
       "type": "error"
     },
     {
+      "inputs": [],
+      "name": "Unauthorized",
+      "type": "error"
+    },
+    {
       "anonymous": false,
       "inputs": [
         {
@@ -436,6 +441,19 @@
     },
     {
       "inputs": [],
+      "name": "accessController",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "agent",
       "outputs": [
         {
@@ -531,6 +549,45 @@
         }
       ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_loan",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_fee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_params",
+          "type": "bytes"
+        }
+      ],
+      "name": "executeOperation",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -1058,12 +1115,35 @@
     },
     {
       "inputs": [],
-      "name": "orcale",
+      "name": "oracle",
       "outputs": [
         {
-          "internalType": "address",
+          "internalType": "contract IPriceProvider",
           "name": "",
           "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "params",
+      "outputs": [
+        {
+          "internalType": "contract IUnitroller",
+          "name": "unitroller",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IPoolAddressesProvider",
+          "name": "aavePoolProvider",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "leverage",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -1095,9 +1175,14 @@
           "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_investing",
+          "type": "bool"
         }
       ],
-      "name": "previewInvest",
+      "name": "preview",
       "outputs": [
         {
           "internalType": "uint256[8]",
@@ -1111,13 +1196,28 @@
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
+          "internalType": "uint256[8]",
+          "name": "_previewAmounts",
+          "type": "uint256[8]"
+        },
+        {
+          "internalType": "bool",
+          "name": "_investing",
+          "type": "bool"
         }
       ],
-      "name": "previewLiquidate",
+      "name": "previewSwapAddons",
       "outputs": [
+        {
+          "internalType": "address[8]",
+          "name": "from",
+          "type": "address[8]"
+        },
+        {
+          "internalType": "address[8]",
+          "name": "to",
+          "type": "address[8]"
+        },
         {
           "internalType": "uint256[8]",
           "name": "amounts",
@@ -1380,11 +1480,6 @@
     {
       "inputs": [],
       "name": "TotalSupplyOverflow",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Unauthorized",
       "type": "error"
     },
     {

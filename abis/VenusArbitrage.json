@@ -575,7 +575,7 @@
         },
         {
           "internalType": "bytes",
-          "name": "_investing",
+          "name": "_params",
           "type": "bytes"
         }
       ],
@@ -1118,7 +1118,7 @@
       "name": "oracle",
       "outputs": [
         {
-          "internalType": "address",
+          "internalType": "contract IPriceProvider",
           "name": "",
           "type": "address"
         }
@@ -1175,9 +1175,14 @@
           "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_investing",
+          "type": "bool"
         }
       ],
-      "name": "previewInvest",
+      "name": "preview",
       "outputs": [
         {
           "internalType": "uint256[8]",
@@ -1194,57 +1199,14 @@
           "internalType": "uint256[8]",
           "name": "_previewAmounts",
           "type": "uint256[8]"
-        }
-      ],
-      "name": "previewInvestSwapAddons",
-      "outputs": [
-        {
-          "internalType": "address[8]",
-          "name": "from",
-          "type": "address[8]"
         },
         {
-          "internalType": "address[8]",
-          "name": "to",
-          "type": "address[8]"
-        },
-        {
-          "internalType": "uint256[8]",
-          "name": "amounts",
-          "type": "uint256[8]"
+          "internalType": "bool",
+          "name": "_investing",
+          "type": "bool"
         }
       ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "previewLiquidate",
-      "outputs": [
-        {
-          "internalType": "uint256[8]",
-          "name": "amounts",
-          "type": "uint256[8]"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256[8]",
-          "name": "_previewAmounts",
-          "type": "uint256[8]"
-        }
-      ],
-      "name": "previewLiquidateSwapAddons",
+      "name": "previewSwapAddons",
       "outputs": [
         {
           "internalType": "address[8]",
@@ -1321,19 +1283,6 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_l",
-          "type": "uint256"
-        }
-      ],
-      "name": "setLeverage",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
